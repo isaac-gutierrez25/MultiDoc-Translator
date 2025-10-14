@@ -15,25 +15,20 @@
 ---
 
 Rozszerzenie Visual Studio Code, które automatycznie generuje wielojęzyczne pliki `README.md` przy użyciu **bezpłatnego interfejsu API Tłumacza Google** — klucz API nie jest wymagany.
-
 - --
 
 ## ✨ Funkcje
-
-- 🌍 Automatycznie przetłumacz `README.md` na **ponad 10 języków**.
+- 🌍 Automatycznie tłumacz `README.md` na **ponad 10 języków**.
 - 🔒 Chroni bloki kodu, kod wbudowany i adresy URL przed tłumaczeniem.
 - 💬 Automatycznie dodaje blok zmiany języka (`🌐 Available in other languages:`).
 - 💾 Umożliwia opcjonalne **wprowadzanie niestandardowego klucza API** (np. Google Cloud, DeepL).
 - 🧠 Korzysta z wbudowanego Tłumacza Google (nie wymaga konta).
 - ⚙️ Prosty interfejs paska bocznego jednym kliknięciem.
-
 - --
 
 ## ✅ Obsługiwane wersje kodu VS
-
 - Wersja minimalna: **1.85.0**
 - Testowano na **Windows**, **macOS** i **Linux**.
-
 - --
 
 ## 🧩 Instalacja
@@ -46,51 +41,43 @@ Rozszerzenie Visual Studio Code, które automatycznie generuje wielojęzyczne pl
    ```
 2. Otwórz folder w VS Code.
 3. Naciśnij **F5**, aby uruchomić **Host rozwoju rozszerzeń**.
-4. Otwórz swój projekt zawierający plik `README.md`.
+4. Otwórz projekt zawierający `README.md`.
 5. Otwórz pasek boczny → kliknij **⚙️ Generuj wielojęzyczne pliki README**.
-
 - --
 
 ## ⌨️ Polecenia i skróty
 
 |Nazwa polecenia |Identyfikator polecenia |Skrót |
-|------------------------------ |---------------------------- |-------- |
+| ----------------------------- | -------------------------------------- |-------- |
 |Generuj wielojęzyczne pliki README |`auto-translate-readmes.run` |_Nie dotyczy_ |
-
 - --
 
 ## 🧠 Przykład
-
-**Zanim:**
+- *Zanim:**
 
 ```md
 # My Awesome Extension
 
 A simple extension to help developers write better code.
 ```
-
-**Po (przetłumaczone):**
+- *Po (przetłumaczone):**
 
 ```md
 # My Awesome Extension
 
 > 🌐 Disponible en otros idiomas: [English](../../README.md) | [Deutsch](README-DE.md) | [Français](README-FR.md)
-
 - --
 
 Une extension Visual Studio Code qui aide les développeurs à mieux écrire du code.
 ```
-
 - --
 
 ## 🧠 Interfejs paska bocznego
 
 Pasek boczny umożliwia:
-
 - 🗝️ Wprowadź i zapisz własny klucz API (opcjonalnie)
 - ⚙️ Kliknij jeden przycisk, aby wygenerować wszystkie przetłumaczone pliki README
-- 📁 Dane wyjściowe zapisane w folderze `docs/lang/`
-
+- 📁 Dane wyjściowe przechowywane w folderze `docs/lang/`
 - --
 
 ## 🛠️Rozwój
@@ -112,7 +99,6 @@ Uruchom testy:
 ```bash
 npm test
 ```
-
 - --
 
 ## 🧑‍💻 Współtworzenie
@@ -123,13 +109,11 @@ npm test
 4. Skompiluj TypeScript: `npm run compile`.
 5. Przetestuj kod VS (naciśnij **F5** → Host rozwoju rozszerzenia).
 6. Prześlij żądanie ściągnięcia.
-
 - --
 
 ## 🐞 Błędy i problemy
 
-Zgłoś problemy na stronie [GitHub Issues page](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/issues).
-
+Zgłaszaj problemy na stronie [GitHub Issues page](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/issues).
 - --
 
 ## 🧾 Licencja

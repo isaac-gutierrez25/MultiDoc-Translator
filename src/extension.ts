@@ -113,7 +113,27 @@ class TranslateSidebarProvider implements vscode.WebviewViewProvider {
       return vscode.window.showErrorMessage("README.md not found.");
 
     // === Baca README utama ===
-    const originalText = fs.readFileSync(srcPath, "utf-8");
+    let originalText = fs.readFileSync(srcPath, "utf-8");
+
+    // === Tambahkan language switcher ke README root jika belum ada ===
+    if (!originalText.includes("> 🌐")) {
+        const parts = originalText.split(/\n-{3,}\n/);
+        const headerPart = parts[0] || "";
+        const bodyPart = parts.slice(1).join("\n---\n");
+
+        const langLinks = Object.entries(LANGUAGES)
+            .map(([code, [name]]) => `[${name}](docs/lang/README-${code.toUpperCase()}.md)`)
+            .join(" | ");
+        
+        const multilingualBlock = `> 🌐 Available in other languages: ${langLinks}`;
+
+        const newContent = `${headerPart.trim()}\n\n${multilingualBlock}\n\n---\n${bodyPart}`;
+
+        fs.writeFileSync(srcPath, newContent, "utf-8");
+        originalText = newContent; // Perbarui variabel dengan konten baru
+        this.output.appendLine("✅ Language switcher block added to root README.md.");
+        vscode.window.showInformationMessage("Language switcher added to root README.md.");
+    }
 
     // Pisahkan header dan body (semua teks setelah --- pertama dianggap body)
     const parts = originalText.split(/\n-{3,}\n/);
@@ -148,26 +168,32 @@ class TranslateSidebarProvider implements vscode.WebviewViewProvider {
       this.output.appendLine(`🌐 Translating → ${name}`);
 
       try {
-        // 🔒 Lindungi code block, inline code, dan link
         const placeholderMap: Record<string, string> = {};
         let tempBody = bodyPart;
         let counter = 0;
+        
+        // 1. Pemisah tabel Markdown
+        tempBody = tempBody.replace(/^\|[-| :]+\|/gm, (match) => {
+            const key = `@@TABLE_SEPARATOR_${counter++}@@`;
+            placeholderMap[key] = match;
+            return key;
+        });
 
-        // Code blocks (```...```)
+        // 2. Blok Kode
         tempBody = tempBody.replace(/```[\s\S]*?```/g, (match) => {
           const key = `@@CODEBLOCK_${counter++}@@`;
           placeholderMap[key] = match;
           return key;
         });
 
-        // Inline code `...`
+        // 3. Kode Inline
         tempBody = tempBody.replace(/`[^`]+`/g, (match) => {
           const key = `@@INLINECODE_${counter++}@@`;
           placeholderMap[key] = match;
           return key;
         });
 
-        // Links & URLs
+        // 4. Link & URL
         tempBody = tempBody.replace(/\[.*?\]\(.*?\)|https?:\/\/\S+/g, (match) => {
           const key = `@@LINK_${counter++}@@`;
           placeholderMap[key] = match;
@@ -193,6 +219,9 @@ class TranslateSidebarProvider implements vscode.WebviewViewProvider {
           const regex = new RegExp(safeKey, "g");
           translatedBody = translatedBody.replace(regex, val);
         }
+        
+        // Normalkan format list Markdown
+        translatedBody = translatedBody.replace(/^\s*(-|\*|–)\s*(.*)/gm, "- $2");
 
         // 🌍 Blok tautan antar bahasa
         const links = ["[English](../../README.md)"];
@@ -211,6 +240,7 @@ class TranslateSidebarProvider implements vscode.WebviewViewProvider {
         // 💾 Simpan hasil
         fs.writeFileSync(dest, fixedReadme, "utf-8");
 
+        // --- PERBAIKAN DI SINI ---
         this.output.appendLine(`✅ ${name} done.`);
       } catch (e: any) {
         vscode.window.showErrorMessage(`❌ ${name}: ${e.message}`);
@@ -222,6 +252,7 @@ class TranslateSidebarProvider implements vscode.WebviewViewProvider {
     this.output.appendLine("--------------------------------");
     this.output.appendLine("✅ Semua README berhasil diterjemahkan!");
     this.output.show(true);
+    // --- AKHIR PERBAIKAN ---
   }
 }
 

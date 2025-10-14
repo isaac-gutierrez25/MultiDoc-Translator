@@ -14,26 +14,21 @@
 
 ---
 
-Ekstensi Visual Studio Code yang secara otomatis menghasilkan file `README.md` multibahasa menggunakan **Google Translate API gratis** — tidak diperlukan kunci API.
-
+Ekstensi Visual Studio Code yang secara otomatis menghasilkan file `README.md` multibahasa menggunakan **API Google Terjemahan gratis** — tidak memerlukan kunci API.
 - --
 
 ## ✨ Fitur
-
 - 🌍 Terjemahkan `README.md` secara otomatis ke **10+ bahasa**.
 - 🔒 Melindungi blok kode, kode sebaris, dan URL agar tidak diterjemahkan.
 - 💬 Menambahkan blok pengalih bahasa (`🌐 Available in other languages:`) secara otomatis.
 - 💾 Mengizinkan **input kunci API khusus** opsional (misalnya, Google Cloud, DeepL).
 - 🧠 Menggunakan Google Terjemahan bawaan (tidak perlu akun).
 - ⚙️ Antarmuka sidebar 1-klik yang sederhana.
-
 - --
 
 ## ✅ Versi VS Code yang Didukung
-
 - Versi minimum: **1.85.0**
 - Diuji pada **Windows**, **macOS**, dan **Linux**.
-
 - --
 
 ## 🧩 Instalasi
@@ -48,49 +43,41 @@ Ekstensi Visual Studio Code yang secara otomatis menghasilkan file `README.md` m
 3. Tekan **F5** untuk meluncurkan **Extension Development Host**.
 4. Buka proyek Anda yang berisi `README.md`.
 5. Buka sidebar → klik **⚙️ Hasilkan README Multibahasa**.
-
 - --
 
 ## ⌨️ Perintah & Pintasan
 
 |Nama Perintah |ID Perintah |Pintasan |
-|----------------------------- |---------------------------- |-------- |
+| ----------------------------- | ---------------------------- |-------- |
 |Hasilkan README Multibahasa |`auto-translate-readmes.run` |_T/A_ |
-
 - --
 
 ## 🧠 Contoh
-
-**Sebelum:**
+- *Sebelum:**
 
 ```md
 # My Awesome Extension
 
 A simple extension to help developers write better code.
 ```
-
-**Setelah (Diterjemahkan):**
+- *Setelah (Diterjemahkan):**
 
 ```md
 # My Awesome Extension
 
 > 🌐 Disponible en otros idiomas: [English](../../README.md) | [Deutsch](README-DE.md) | [Français](README-FR.md)
-
 - --
 
 Une extension Visual Studio Code qui aide les développeurs à mieux écrire du code.
 ```
-
 - --
 
 ## 🧠 Antarmuka Bilah Sisi
 
 Bilah samping memungkinkan Anda untuk:
-
 - 🗝️ Masukkan dan simpan kunci API Anda sendiri (opsional)
 - ⚙️ Klik satu tombol untuk menghasilkan semua file README yang diterjemahkan
 - 📁 Output disimpan di folder `docs/lang/`
-
 - --
 
 ## 🛠️ Perkembangan
@@ -112,7 +99,6 @@ Jalankan tes:
 ```bash
 npm test
 ```
-
 - --
 
 ## 🧑‍💻 Berkontribusi
@@ -123,13 +109,11 @@ npm test
 4. Kompilasi TypeScript: `npm run compile`.
 5. Uji di VS Code (tekan **F5** → Extension Development Host).
 6. Kirim Permintaan Tarik.
-
 - --
 
 ## 🐞 Bug & Masalah
 
 Laporkan masalah di [GitHub Issues page](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/issues).
-
 - --
 
 ## 🧾 Lisensi

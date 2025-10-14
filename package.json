@@ -2,7 +2,7 @@
   "name": "auto-translate-readmes",
   "displayName": "Auto Translate Readmes",
   "description": "Generate multilingual README files automatically inside VS Code — now powered by free Google Translate API (no key required).",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "publisher": "fatonyahmadfauzi",
   "engines": {
     "vscode": "^1.85.0"

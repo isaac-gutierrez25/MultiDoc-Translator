@@ -14,26 +14,21 @@
 
 ---
 
-Uma extensão do Visual Studio Code que gera automaticamente arquivos `README.md` multilíngues usando a **API gratuita do Google Translate** — sem necessidade de chave de API.
-
+Extensão do Visual Studio Code que gera automaticamente arquivos `README.md` multilíngues usando a **API gratuita do Google Translate** — sem necessidade de chave de API.
 - --
 
 ## ✨ Recursos
-
 - 🌍 Traduzir automaticamente `README.md` para **mais de 10 idiomas**.
 - 🔒 Protege blocos de código, código embutido e URLs contra tradução.
 - 💬 Adiciona um bloco de alternância de idioma (`🌐 Available in other languages:`) automaticamente.
 - 💾 Permite **entrada opcional de chave de API personalizada** (por exemplo, Google Cloud, DeepL).
 - 🧠 Usa Google Translate integrado (não é necessária conta).
 - ⚙️ Interface simples da barra lateral com 1 clique.
-
 - --
 
 ## ✅ Versões de código VS suportadas
-
 - Versão mínima: **1.85.0**
 - Testado em **Windows**, **macOS** e **Linux**.
-
 - --
 
 ## 🧩 Instalação
@@ -48,49 +43,41 @@ Uma extensão do Visual Studio Code que gera automaticamente arquivos `README.md
 3. Pressione **F5** para iniciar o **Host de desenvolvimento de extensão**.
 4. Abra seu projeto contendo um `README.md`.
 5. Abra a barra lateral → clique em **⚙️ Gerar READMEs multilíngues**.
-
 - --
 
 ## ⌨️ Comandos e atalhos
 
-|Nome do comando |ID do comando |Atalho |
-|----------------------------- |---------------------------- |-------- |
+|Nome do Comando |ID do comando |Atalho |
+| ----------------------------- | --------------------------- |-------- |
 |Gere READMEs multilíngues |`auto-translate-readmes.run` |_N/A_ |
-
 - --
 
 ## 🧠 Exemplo
-
-**Antes:**
+- *Antes:**
 
 ```md
 # My Awesome Extension
 
 A simple extension to help developers write better code.
 ```
-
-**Depois (traduzido):**
+- *Depois (traduzido):**
 
 ```md
 # My Awesome Extension
 
 > 🌐 Disponible en otros idiomas: [English](../../README.md) | [Deutsch](README-DE.md) | [Français](README-FR.md)
-
 - --
 
 Une extension Visual Studio Code qui aide les développeurs à mieux écrire du code.
 ```
-
 - --
 
 ## 🧠 Interface da barra lateral
 
 A barra lateral permite que você:
-
 - 🗝️ Insira e salve sua própria chave API (opcional)
 - ⚙️ Clique em um único botão para gerar todos os arquivos README traduzidos
 - 📁 Saída armazenada na pasta `docs/lang/`
-
 - --
 
 ## 🛠️ Desenvolvimento
@@ -112,7 +99,6 @@ Execute testes:
 ```bash
 npm test
 ```
-
 - --
 
 ## 🧑‍💻 Contribuindo
@@ -123,13 +109,11 @@ npm test
 4. Compile o TypeScript: `npm run compile`.
 5. Teste no VS Code (pressione **F5** → Host de desenvolvimento de extensão).
 6. Envie uma solicitação pull.
-
 - --
 
 ## 🐞 Bugs e problemas
 
 Relate problemas no [GitHub Issues page](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/issues).
-
 - --
 
 ## 🧾 Licença
