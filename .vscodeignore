@@ -1,0 +1,21 @@
+# Folder dependensi
+node_modules/**
+
+# Folder dan file source code (yang sudah dikompilasi ke 'out/')
+src/**
+**/*.ts
+**/*.map
+
+# Konfigurasi & skrip development
+.github/**
+.vscode/**
+.vscode-test.mjs
+.gitignore
+tsconfig.json
+eslint.config.mjs
+auto_translate_readmes.py
+package-lock.json
+
+# Dokumentasi
+docs/**
+vsc-extension-quickstart.md

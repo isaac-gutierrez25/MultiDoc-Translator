@@ -1,0 +1,93 @@
+{
+  "name": "auto-translate-readmes",
+  "displayName": "Auto Translate Readmes",
+  "description": "Generate multilingual README files automatically inside VS Code — now powered by free Google Translate API (no key required).",
+  "version": "1.0.3",
+  "publisher": "fatonyahmadfauzi",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes.git"
+  },
+  "categories": ["Other"],
+  "activationEvents": [
+    "onView:autoTranslateView",
+    "onCommand:auto-translate-readmes.run"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "auto-translate-readmes.run",
+        "title": "Generate Multilingual READMEs"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "autoTranslateContainer",
+          "title": "Translate",
+          "icon": "images/sidebar.svg"
+        }
+      ]
+    },
+    "views": {
+      "autoTranslateContainer": [
+        {
+          "id": "autoTranslateView",
+          "name": "Auto Translate"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "autoTranslateView",
+        "contents": "🌍 **Auto Translate Readmes**\n\nEasily generate multilingual README files inside VS Code using free Google Translate API.\n\n[⚙️ Generate Now](command:auto-translate-readmes.run)"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Auto Translate Readmes Settings",
+      "properties": {
+        "autoTranslateReadmes.skipExisting": {
+          "type": "boolean",
+          "default": false,
+          "description": "If true, skip generating translation files that already exist."
+        },
+        "autoTranslateReadmes.languages": {
+          "type": "array",
+          "default": ["id", "fr", "de", "jp", "zh", "es", "pl", "ru", "pt", "ko"],
+          "description": "List of target languages to generate README translations for."
+        },
+        "autoTranslateReadmes.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Optional custom API key for translation service (e.g., Google Cloud, DeepL). Leave blank to use free Google Translate API."
+        }
+      }
+    }
+  },
+  "icon": "images/icon.png",
+  "bugs": {
+    "url": "https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/issues"
+  },
+  "homepage": "https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes#readme",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts",
+    "pretest": "npm run compile && npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/node": "22.x",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.9.3",
+    "eslint": "^9.36.0",
+    "node-fetch": "^2.7.0"
+  },
+  "dependencies": {}
+}
