@@ -16,7 +16,7 @@
 
 **무료 Google 번역 API**를 사용하여 다국어 `README.md` 파일을 자동으로 생성하는 Visual Studio Code 확장 프로그램입니다. API 키가 필요하지 않습니다.
 
----
+- --
 
 ## ✨ 특징
 
@@ -27,39 +27,37 @@
 - 🧠 내장된 Google 번역을 사용합니다(계정이 필요하지 않음).
 - ⚙️ 간단한 원클릭 사이드바 인터페이스.
 
----
+- --
 
 ## ✅ 지원되는 VS 코드 버전
 
 - 최소 버전: **1.85.0**
 - **Windows**, **macOS** 및 **Linux**에서 테스트되었습니다.
 
----
+- --
 
 ## 🧩 설치
 
 1. 다음 저장소를 복제하거나 다운로드합니다.
-
 ```bash
    git clone https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes.git
    cd Auto-Translate-Readmes
    npm install
-```
-
+   ```
 2. VS Code에서 폴더를 엽니다.
 3. **F5**를 눌러 **확장 개발 호스트**를 시작합니다.
 4. `README.md`이 포함된 프로젝트를 엽니다.
 5. 사이드바를 열고 → **⚙️ 다국어 README 생성**을 클릭합니다.
 
----
+- --
 
 ## ⌨️ 명령 및 단축키
 
-| 명령 이름          | 명령 ID                      | 바로가기 |
-| ------------------ | ---------------------------- | -------- |
-| 다국어 README 생성 | `auto-translate-readmes.run` | _N/A_    |
+|명령 이름 |명령 ID |바로가기 |
+|---------------- |--------------- |-------- |
+|다국어 README 생성 |`auto-translate-readmes.run` |_N/A_ |
 
----
+- --
 
 ## 🧠 예
 
@@ -78,12 +76,12 @@ A simple extension to help developers write better code.
 
 > 🌐 Disponible en otros idiomas: [English](../../README.md) | [Deutsch](README-DE.md) | [Français](README-FR.md)
 
----
+- --
 
 Une extension Visual Studio Code qui aide les développeurs à mieux écrire du code.
 ```
 
----
+- --
 
 ## 🧠 사이드바 인터페이스
 
@@ -93,7 +91,7 @@ Une extension Visual Studio Code qui aide les développeurs à mieux écrire du 
 - ⚙️ 번역된 모든 README 파일을 생성하려면 버튼 하나만 클릭하세요.
 - 📁 `docs/lang/` 폴더에 저장된 출력
 
----
+- --
 
 ## 🛠️ 개발
 
@@ -115,7 +113,7 @@ npm run lint
 npm test
 ```
 
----
+- --
 
 ## 🧑‍💻 기여
 
@@ -126,14 +124,14 @@ npm test
 5. VS Code에서 테스트합니다(**F5** → 확장 개발 호스트 누르기).
 6. 풀 요청(Pull Request)을 제출하세요.
 
----
+- --
 
 ## 🐞 버그 및 문제
 
 [GitHub Issues page](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/issues)에서 문제를 신고하세요.
 
----
+- --
 
-## 🧾 라이선스
+## 🧾 라이센스
 
 MIT 라이센스 © [Fatony Ahmad Fauzi](../../LICENSE)

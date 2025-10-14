@@ -16,7 +16,7 @@
 
 Uma extensão do Visual Studio Code que gera automaticamente arquivos `README.md` multilíngues usando a **API gratuita do Google Translate** — sem necessidade de chave de API.
 
----
+- --
 
 ## ✨ Recursos
 
@@ -27,39 +27,37 @@ Uma extensão do Visual Studio Code que gera automaticamente arquivos `README.md
 - 🧠 Usa Google Translate integrado (não é necessária conta).
 - ⚙️ Interface simples da barra lateral com 1 clique.
 
----
+- --
 
 ## ✅ Versões de código VS suportadas
 
 - Versão mínima: **1.85.0**
 - Testado em **Windows**, **macOS** e **Linux**.
 
----
+- --
 
 ## 🧩 Instalação
 
 1. Clone ou baixe este repositório:
-
 ```bash
    git clone https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes.git
    cd Auto-Translate-Readmes
    npm install
-```
-
+   ```
 2. Abra a pasta no VS Code.
 3. Pressione **F5** para iniciar o **Host de desenvolvimento de extensão**.
 4. Abra seu projeto contendo um `README.md`.
 5. Abra a barra lateral → clique em **⚙️ Gerar READMEs multilíngues**.
 
----
+- --
 
 ## ⌨️ Comandos e atalhos
 
-| Nome do Comando           | ID do comando                | Atalho |
-| ------------------------- | ---------------------------- | ------ |
-| Gere READMEs multilíngues | `auto-translate-readmes.run` | _N/A_  |
+|Nome do comando |ID do comando |Atalho |
+|----------------------------- |---------------------------- |-------- |
+|Gere READMEs multilíngues |`auto-translate-readmes.run` |_N/A_ |
 
----
+- --
 
 ## 🧠 Exemplo
 
@@ -78,12 +76,12 @@ A simple extension to help developers write better code.
 
 > 🌐 Disponible en otros idiomas: [English](../../README.md) | [Deutsch](README-DE.md) | [Français](README-FR.md)
 
----
+- --
 
 Une extension Visual Studio Code qui aide les développeurs à mieux écrire du code.
 ```
 
----
+- --
 
 ## 🧠 Interface da barra lateral
 
@@ -93,7 +91,7 @@ A barra lateral permite que você:
 - ⚙️ Clique em um único botão para gerar todos os arquivos README traduzidos
 - 📁 Saída armazenada na pasta `docs/lang/`
 
----
+- --
 
 ## 🛠️ Desenvolvimento
 
@@ -115,7 +113,7 @@ Execute testes:
 npm test
 ```
 
----
+- --
 
 ## 🧑‍💻 Contribuindo
 
@@ -126,13 +124,13 @@ npm test
 5. Teste no VS Code (pressione **F5** → Host de desenvolvimento de extensão).
 6. Envie uma solicitação pull.
 
----
+- --
 
 ## 🐞 Bugs e problemas
 
 Relate problemas no [GitHub Issues page](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/issues).
 
----
+- --
 
 ## 🧾 Licença
 

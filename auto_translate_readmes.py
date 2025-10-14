@@ -134,6 +134,10 @@ def translate_readme(lang_code, lang_info, translator):
     restored = unfreeze_markdown(translated, blocks, inlines, links)
     restored = restore_blocks(restored, blocks)
 
+    # === BARU: Perbaiki bug pemformatan daftar Markdown ===
+    # Memastikan ada spasi setelah tanda hubung di awal baris
+    restored = re.sub(r'^-(\S)', r'- \1', restored, flags=re.MULTILINE)
+
     # 🔗 Ubah link (LICENSE) → (../../LICENSE)
     restored = re.sub(r"\(LICENSE\)", "(../../LICENSE)", restored)
 
@@ -147,15 +151,51 @@ def translate_readme(lang_code, lang_info, translator):
 
 def main():
     print("\n🌍 Membuat & menerjemahkan semua README multilingual...\n")
+    
+    # === Perbarui README.md utama jika perlu ===
+    try:
+        with open(SOURCE_FILE, 'r+', encoding='utf-8') as f:
+            src_text = f.read()
+
+            if "> 🌐 Available in other languages:" not in src_text:
+                print(f"🔧 Language switcher not found in {SOURCE_FILE}. Adding it now...")
+                
+                lang_links = " | ".join(
+                    [f"[{info[0]}](docs/lang/README-{code.upper()}.md)" for code, info in LANGUAGES.items()]
+                )
+                
+                block_to_add = f"\n> 🌐 Available in other languages: {lang_links}\n"
+
+                # Cari posisi '---' pertama
+                match = re.search(r"\n-{3,}\n", src_text)
+                if match:
+                    # Sisipkan blok sebelum '---' pertama
+                    position = match.start()
+                    new_content = src_text[:position] + block_to_add + src_text[position:]
+                else:
+                    # Jika tidak ada '---', tambahkan di akhir file
+                    new_content = src_text.strip() + "\n" + block_to_add
+
+                # Kembali ke awal file untuk menimpa dengan konten baru
+                f.seek(0)
+                f.write(new_content)
+                f.truncate()
+                print(f"✅ Successfully added language switcher to {SOURCE_FILE}.")
+            else:
+                print(f"👍 Language switcher already exists in {SOURCE_FILE}. Skipping.")
+
+    except Exception as e:
+        print(f"❌ Failed to update {SOURCE_FILE}: {e}")
+
     translator = Translator()
 
-    for code, info in tqdm(LANGUAGES.items()):
+    for code, info in tqdm(LANGUAGES.items(), desc="Translating READMEs"):
         try:
             translate_readme(code, info, translator)
         except Exception as e:
-            print(f"❌ Error di {code.upper()}: {e}")
+            print(f"❌ Error processing {code.upper()}: {e}")
 
-    print("\n🎉 Semua file README berhasil dibuat dan diterjemahkan!\n")
+    print("\n🎉 All README files created and translated successfully!\n")
 
 
 if __name__ == "__main__":

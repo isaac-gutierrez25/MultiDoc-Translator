@@ -16,7 +16,7 @@
 
 Une extension Visual Studio Code qui génère automatiquement des fichiers `README.md` multilingues à l'aide de l'**API gratuite Google Translate** — aucune clé API requise.
 
----
+- --
 
 ## ✨ Caractéristiques
 
@@ -27,40 +27,37 @@ Une extension Visual Studio Code qui génère automatiquement des fichiers `READ
 - 🧠 Utilise Google Translate intégré (aucun compte requis).
 - ⚙️ Interface de barre latérale simple en 1 clic.
 
----
+- --
 
 ## ✅ Versions de code VS prises en charge
 
--Version minimale : **1.85.0**
-
+- Version minimale : **1.85.0**
 - Testé sur **Windows**, **macOS** et **Linux**.
 
----
+- --
 
 ## 🧩Installation
 
 1. Clonez ou téléchargez ce référentiel :
-
 ```bash
    git clone https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes.git
    cd Auto-Translate-Readmes
    npm install
-```
-
+   ```
 2. Ouvrez le dossier dans VS Code.
 3. Appuyez sur **F5** pour lancer **Extension Development Host**.
 4. Ouvrez votre projet contenant un `README.md`.
 5. Ouvrez la barre latérale → cliquez sur **⚙️ Générer des README multilingues**.
 
----
+- --
 
 ## ⌨️ Commandes et raccourcis
 
-| Nom de la commande              | ID de commande               | Raccourci |
-| ------------------------------- | ---------------------------- | --------- |
-| Générer des README multilingues | `auto-translate-readmes.run` | _N/A_     |
+|Nom de la commande |ID de commande |Raccourci |
+|----------------------------- |---------------------------- |-------- |
+|Générer des README multilingues |`auto-translate-readmes.run` |_N/A_ |
 
----
+- --
 
 ## 🧠 Exemple
 
@@ -79,12 +76,12 @@ A simple extension to help developers write better code.
 
 > 🌐 Disponible en otros idiomas: [English](../../README.md) | [Deutsch](README-DE.md) | [Français](README-FR.md)
 
----
+- --
 
 Une extension Visual Studio Code qui aide les développeurs à mieux écrire du code.
 ```
 
----
+- --
 
 ## 🧠 Interface de la barre latérale
 
@@ -94,7 +91,7 @@ La barre latérale vous permet de :
 - ⚙️ Cliquez sur un seul bouton pour générer tous les fichiers README traduits
 - 📁 Sortie stockée dans le dossier `docs/lang/`
 
----
+- --
 
 ## 🛠️ Développement
 
@@ -116,7 +113,7 @@ Exécutez des tests :
 npm test
 ```
 
----
+- --
 
 ## 🧑‍💻 Contribuer
 
@@ -127,13 +124,13 @@ npm test
 5. Testez dans VS Code (appuyez sur **F5** → Extension Development Host).
 6. Soumettez une demande de tirage.
 
----
+- --
 
 ## 🐞 Bogues et problèmes
 
 Signalez les problèmes sur le [GitHub Issues page](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/issues).
 
----
+- --
 
 ## 🧾 Licence
 

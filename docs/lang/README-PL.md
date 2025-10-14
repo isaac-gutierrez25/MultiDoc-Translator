@@ -16,7 +16,7 @@
 
 Rozszerzenie Visual Studio Code, które automatycznie generuje wielojęzyczne pliki `README.md` przy użyciu **bezpłatnego interfejsu API Tłumacza Google** — klucz API nie jest wymagany.
 
----
+- --
 
 ## ✨ Funkcje
 
@@ -27,39 +27,37 @@ Rozszerzenie Visual Studio Code, które automatycznie generuje wielojęzyczne pl
 - 🧠 Korzysta z wbudowanego Tłumacza Google (nie wymaga konta).
 - ⚙️ Prosty interfejs paska bocznego jednym kliknięciem.
 
----
+- --
 
 ## ✅ Obsługiwane wersje kodu VS
 
 - Wersja minimalna: **1.85.0**
 - Testowano na **Windows**, **macOS** i **Linux**.
 
----
+- --
 
 ## 🧩 Instalacja
 
 1. Sklonuj lub pobierz to repozytorium:
-
 ```bash
    git clone https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes.git
    cd Auto-Translate-Readmes
    npm install
-```
-
+   ```
 2. Otwórz folder w VS Code.
 3. Naciśnij **F5**, aby uruchomić **Host rozwoju rozszerzeń**.
 4. Otwórz swój projekt zawierający plik `README.md`.
 5. Otwórz pasek boczny → kliknij **⚙️ Generuj wielojęzyczne pliki README**.
 
----
+- --
 
 ## ⌨️ Polecenia i skróty
 
-| Nazwa polecenia                    | Identyfikator polecenia      | Skrót         |
-| ---------------------------------- | ---------------------------- | ------------- |
-| Generuj wielojęzyczne pliki README | `auto-translate-readmes.run` | _Nie dotyczy_ |
+|Nazwa polecenia |Identyfikator polecenia |Skrót |
+|------------------------------ |---------------------------- |-------- |
+|Generuj wielojęzyczne pliki README |`auto-translate-readmes.run` |_Nie dotyczy_ |
 
----
+- --
 
 ## 🧠 Przykład
 
@@ -78,12 +76,12 @@ A simple extension to help developers write better code.
 
 > 🌐 Disponible en otros idiomas: [English](../../README.md) | [Deutsch](README-DE.md) | [Français](README-FR.md)
 
----
+- --
 
 Une extension Visual Studio Code qui aide les développeurs à mieux écrire du code.
 ```
 
----
+- --
 
 ## 🧠 Interfejs paska bocznego
 
@@ -93,7 +91,7 @@ Pasek boczny umożliwia:
 - ⚙️ Kliknij jeden przycisk, aby wygenerować wszystkie przetłumaczone pliki README
 - 📁 Dane wyjściowe zapisane w folderze `docs/lang/`
 
----
+- --
 
 ## 🛠️Rozwój
 
@@ -115,7 +113,7 @@ Uruchom testy:
 npm test
 ```
 
----
+- --
 
 ## 🧑‍💻 Współtworzenie
 
@@ -126,13 +124,13 @@ npm test
 5. Przetestuj kod VS (naciśnij **F5** → Host rozwoju rozszerzenia).
 6. Prześlij żądanie ściągnięcia.
 
----
+- --
 
 ## 🐞 Błędy i problemy
 
 Zgłoś problemy na stronie [GitHub Issues page](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/issues).
 
----
+- --
 
 ## 🧾 Licencja
 

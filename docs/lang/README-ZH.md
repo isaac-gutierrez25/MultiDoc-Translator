@@ -16,7 +16,7 @@
 
 一个 Visual Studio Code 扩展，可使用 **免费的 Google Translate API** 自动生成多语言 `README.md` 文件 - 无需 API 密钥。
 
----
+- --
 
 ## ✨ 特点
 
@@ -27,39 +27,37 @@
 - 🧠 使用内置谷歌翻译（无需帐户）。
 - ⚙️ 简单的一键侧边栏界面。
 
----
+- --
 
 ## ✅ 支持的 VS Code 版本
 
 - 最低版本：**1.85.0**
 - 在 **Windows**、**macOS** 和 **Linux** 上测试。
 
----
+- --
 
 ## 🧩 安装
 
 1. 克隆或下载此存储库：
-
 ```bash
    git clone https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes.git
    cd Auto-Translate-Readmes
    npm install
-```
-
+   ```
 2. 在 VS Code 中打开该文件夹。
 3. 按 **F5** 启动 **扩展开发主机**。
 4. 打开包含 `README.md` 的项目。
 5. 打开侧边栏 → 单击 **⚙️ 生成多语言自述文件**。
 
----
+- --
 
 ## ⌨️ 命令和快捷键
 
-| 命令名称           | 命令 ID                      | 快捷方式 |
-| ------------------ | ---------------------------- | -------- |
-| 生成多语言自述文件 | `auto-translate-readmes.run` | _不适用_ |
+|命令名称 |命令ID |快捷方式 |
+|-------------------------------------- |---------------------------- |-------- |
+|生成多语言自述文件 |`auto-translate-readmes.run` |_不适用_ |
 
----
+- --
 
 ## 🧠 示例
 
@@ -78,12 +76,12 @@ A simple extension to help developers write better code.
 
 > 🌐 Disponible en otros idiomas: [English](../../README.md) | [Deutsch](README-DE.md) | [Français](README-FR.md)
 
----
+- --
 
 Une extension Visual Studio Code qui aide les développeurs à mieux écrire du code.
 ```
 
----
+- --
 
 ## 🧠 侧边栏界面
 
@@ -93,7 +91,7 @@ Une extension Visual Studio Code qui aide les développeurs à mieux écrire du 
 - ⚙️ 单击一个按钮即可生成所有翻译的自述文件
 - 📁 输出存储在 `docs/lang/` 文件夹中
 
----
+- --
 
 ## 🛠️ 发展
 
@@ -115,7 +113,7 @@ npm run lint
 npm test
 ```
 
----
+- --
 
 ## 🧑‍💻 贡献
 
@@ -126,13 +124,13 @@ npm test
 5. 在 VS Code 中测试（按 **F5** → 扩展开发主机）。
 6. 提交拉取请求。
 
----
+- --
 
 ## 🐞 错误和问题
 
 在[GitHub Issues page](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/issues)上报告问题。
 
----
+- --
 
 ## 🧾 许可证
 
