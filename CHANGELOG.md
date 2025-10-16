@@ -4,6 +4,23 @@ All notable changes to the "auto-translate-readmes" extension will be documented
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [1.0.5] - 2025-10-17
+
+### Changed
+
+- **Improved Translation Logic**: The translation process now preserves all original Markdown formatting, including newlines, indentation, and spacing, ensuring translated files have the exact same structure as the source file.
+
+### Fixed
+
+- **Markdown Integrity**:
+  - Fixed a critical bug where various Markdown elements like **bold text** (`**text**`), `inline code`, sub-list indentation, and table structures were being corrupted or altered during translation.
+  - Resolved an issue where emojis were being removed from translated files.
+  - Corrected a bug where list markers (`-`) would merge with text (e.g., `-Text` instead of `- Text`), particularly in the French translation.
+- **Header Duplication**: Fixed a bug that caused the language switcher block to be duplicated in the headers of translated files.
+- **Build & Configuration**:
+  - Moved `node-fetch` to `dependencies` to resolve runtime errors in the packaged extension.
+  - Added missing `@types/mocha` and `@types/node-fetch` to `devDependencies` to fix build-time errors.
+
 ## [1.0.4] - 2025-10-15
 
 ### Added
@@ -17,12 +34,6 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - Corrected multiple Markdown list formatting errors where spaces after list item markers (`-`) were removed or unwanted indentation was added, ensuring lists render correctly across all languages.
 - Improved the overall robustness of the translation process by adding better protection for various Markdown syntax elements.
 
-## [Unreleased]
-
-- Initial release
-
----
-
 ## [1.0.3] - 2025-10-14
 
 ### Changed
@@ -34,3 +45,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ### Added
 
 - Initial public release.
+
+## [Unreleased]
+
+- Initial release

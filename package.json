@@ -2,7 +2,7 @@
   "name": "auto-translate-readmes",
   "displayName": "Auto Translate Readmes",
   "description": "Generate multilingual README files automatically inside VS Code — now powered by free Google Translate API (no key required).",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "publisher": "fatonyahmadfauzi",
   "engines": {
     "vscode": "^1.85.0"
@@ -11,7 +11,9 @@
     "type": "git",
     "url": "https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes.git"
   },
-  "categories": ["Other"],
+  "categories": [
+    "Other"
+  ],
   "activationEvents": [
     "onView:autoTranslateView",
     "onCommand:auto-translate-readmes.run"
@@ -58,7 +60,18 @@
         },
         "autoTranslateReadmes.languages": {
           "type": "array",
-          "default": ["id", "fr", "de", "jp", "zh", "es", "pl", "ru", "pt", "ko"],
+          "default": [
+            "id",
+            "fr",
+            "de",
+            "jp",
+            "zh",
+            "es",
+            "pl",
+            "ru",
+            "pt",
+            "ko"
+          ],
           "description": "List of target languages to generate README translations for."
         },
         "autoTranslateReadmes.apiKey": {
@@ -83,11 +96,15 @@
     "test": "vscode-test"
   },
   "devDependencies": {
+    "@types/mocha": "^10.0.10",
     "@types/node": "22.x",
+    "@types/node-fetch": "^2.6.13",
     "@types/vscode": "^1.85.0",
-    "typescript": "^5.9.3",
     "eslint": "^9.36.0",
-    "node-fetch": "^2.7.0"
+    "node-fetch": "^2.7.0",
+    "typescript": "^5.9.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "node-fetch": "^2.7.0"
+  }
 }
