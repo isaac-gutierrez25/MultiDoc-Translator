@@ -38,15 +38,24 @@ Extension Visual Studio Code qui génère automatiquement des fichiers `README.m
 
 ## 🧩Installation
 
-1. Clonez ou téléchargez ce référentiel :
-   ```bash
-   git clone https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes.git
-   cd Auto-Translate-Readmes
-   npm install
-   ```
+### Depuis Marketplace (recommandé)
+
+1. Ouvrez **Visual Studio Code**.
+2. Accédez à la vue **Extensions** (`Ctrl+Shift+X`).
+3. Recherchez `Auto Translate Readmes`.
+4. Cliquez sur **Install**.
+
+### Pour le développement (à partir du code source)
+
+1. Clonez ce référentiel :
+    ```bash
+    git clone [https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes.git](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes.git)
+    cd Auto-Translate-Readmes
+    npm install
+    ```
 2. Ouvrez le dossier dans VS Code.
 3. Appuyez sur **F5** pour lancer le **Extension Development Host**.
-4. Ouvrez votre projet contenant un `README.md`.
+4. Dans la nouvelle fenêtre, ouvrez votre projet contenant un `README.md`.
 5. Ouvrez la barre latérale → cliquez sur **⚙️ Generate Multilingual READMEs**.
 
 ---

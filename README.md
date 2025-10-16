@@ -2,7 +2,7 @@
 
 [![VS Code](https://img.shields.io/badge/VS%20Code-1.85.0+-blue.svg)](https://code.visualstudio.com/)
 [![Version](https://img.shields.io/github/v/release/fatonyahmadfauzi/Auto-Translate-Readmes?color=blue.svg)](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/releases)
-[![License: MIT](https://img.shields.io/github/license/fatonyahmadfauzi/Auto-Translate-Readmes?color=green.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/github/license/fatonyahmadfauzi/Auto-Translate-Readmes?color=green.svg)](../../LICENSE)
 [![Build Status](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/actions/workflows/main.yml/badge.svg)](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/actions)
 [![Repo Size](https://img.shields.io/github/repo-size/fatonyahmadfauzi/Auto-Translate-Readmes?color=yellow.svg)](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes)
 [![Last Commit](https://img.shields.io/github/last-commit/fatonyahmadfauzi/Auto-Translate-Readmes?color=brightgreen.svg)](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/commits/main)
@@ -38,16 +38,25 @@ Visual Studio Code extension that automatically generates multilingual `README.m
 
 ## 🧩 Installation
 
-1. Clone or download this repository:
-   ```bash
-   git clone https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes.git
-   cd Auto-Translate-Readmes
-   npm install
-   ```
-2. Open the folder in VS Code.
-3. Press **F5** to launch the **Extension Development Host**.
-4. Open your project containing a `README.md`.
-5. Open the sidebar → click **⚙️ Generate Multilingual READMEs**.
+### From Marketplace (Recommended)
+
+1.  Open **Visual Studio Code**.
+2.  Go to the **Extensions** view (`Ctrl+Shift+X`).
+3.  Search for `Auto Translate Readmes`.
+4.  Click **Install**.
+
+### For Development (from Source Code)
+
+1.  Clone this repository:
+    ```bash
+    git clone [https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes.git](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes.git)
+    cd Auto-Translate-Readmes
+    npm install
+    ```
+2.  Open the folder in VS Code.
+3.  Press **F5** to launch the **Extension Development Host**.
+4.  In the new window, open your project containing a `README.md`.
+5.  Open the sidebar → click **⚙️ Generate Multilingual READMEs**.
 
 ---
 

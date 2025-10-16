@@ -4,22 +4,26 @@ All notable changes to the "auto-translate-readmes" extension will be documented
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [1.0.5] - 2025-10-17
+## [1.0.6] - 2025-10-17
 
 ### Changed
 
-- **Improved Translation Logic**: The translation process now preserves all original Markdown formatting, including newlines, indentation, and spacing, ensuring translated files have the exact same structure as the source file.
+- **Switched Python Translation Library**: Replaced the unstable `googletrans` library with `deep-translator` in the Python script (`auto_translate_readmes.py`) to permanently fix persistent connection errors (`JSONDecodeError`) and improve stability.
+- **Implemented Bundling**: The VS Code extension now uses `esbuild` to bundle all necessary code into a single file. This fixes a critical issue where the extension would not run after being published to the Marketplace.
+- **Refined Translation Logic**: The core logic was reverted to a more stable single-request-per-language model. This method uses a robust placeholder system to protect all Markdown structures (code blocks, bold text, newlines, etc.) ensuring that the translated file's formatting is identical to the source file.
 
 ### Fixed
 
-- **Markdown Integrity**:
-  - Fixed a critical bug where various Markdown elements like **bold text** (`**text**`), `inline code`, sub-list indentation, and table structures were being corrupted or altered during translation.
-  - Resolved an issue where emojis were being removed from translated files.
-  - Corrected a bug where list markers (`-`) would merge with text (e.g., `-Text` instead of `- Text`), particularly in the French translation.
+- **Complete Formatting Integrity**: Fixed numerous formatting bugs that occurred during translation, including:
+  - Incorrect spacing inside and around **bold** and `inline code` elements.
+  - Disappearing newlines, which caused an incorrect line count in translated files.
+  - Corrupted list markers (e.g., `-Text` instead of `- Text`), particularly in the French translation.
+  - Disappearing emojis from list items.
 - **Header Duplication**: Fixed a bug that caused the language switcher block to be duplicated in the headers of translated files.
-- **Build & Configuration**:
-  - Moved `node-fetch` to `dependencies` to resolve runtime errors in the packaged extension.
-  - Added missing `@types/mocha` and `@types/node-fetch` to `devDependencies` to fix build-time errors.
+
+## [1.0.5]
+
+_(This version contained various unsuccessful attempts to fix formatting and was superseded by the more stable logic in 1.0.6.)_
 
 ## [1.0.4] - 2025-10-15
 
@@ -32,7 +36,6 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - Fixed a critical bug where Markdown table structures would break in some translations (e.g., Chinese) due to corrupted separator lines.
 - Resolved an issue where placeholders for protected content (like code blocks) were being incorrectly translated in certain languages (e.g., Polish), causing parts of the README to not render correctly.
 - Corrected multiple Markdown list formatting errors where spaces after list item markers (`-`) were removed or unwanted indentation was added, ensuring lists render correctly across all languages.
-- Improved the overall robustness of the translation process by adding better protection for various Markdown syntax elements.
 
 ## [1.0.3] - 2025-10-14
 

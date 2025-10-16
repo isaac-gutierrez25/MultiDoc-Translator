@@ -1,14 +1,9 @@
-# Folder dependensi
+.vscode/**
+.github/**
+src/**
 node_modules/**
 
-# Folder dan file source code (yang sudah dikompilasi ke 'out/')
-src/**
-**/*.ts
-**/*.map
-
-# Konfigurasi & skrip development
-.github/**
-.vscode/**
+# Abaikan file konfigurasi
 .vscode-test.mjs
 .gitignore
 tsconfig.json
@@ -16,6 +11,10 @@ eslint.config.mjs
 auto_translate_readmes.py
 package-lock.json
 
-# Dokumentasi
-docs/**
-vsc-extension-quickstart.md
+# Abaikan folder output lama dari tsc
+out/**
+
+# Jangan abaikan dokumentasi dan ikon
+!docs/
+!images/
+!LICENSE

@@ -38,15 +38,24 @@
 
 ## 🧩 インストール
 
-1. このリポジトリを複製またはダウンロードします。
-   ```bash
-   git clone https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes.git
-   cd Auto-Translate-Readmes
-   npm install
-   ```
+### マーケットプレイスから (推奨)
+
+1. **Visual Studio Code** を開きます。
+2. **Extensions** ビュー (`Ctrl+Shift+X`) に移動します。
+3. `Auto Translate Readmes` を検索します。
+4. 「**Install**」をクリックします。
+
+### 開発用 (ソースコードから)
+
+1. このリポジトリのクローンを作成します。
+    ```bash
+    git clone [https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes.git](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes.git)
+    cd Auto-Translate-Readmes
+    npm install
+    ```
 2. VS Code でフォルダーを開きます。
 3. **F5** を押して **Extension Development Host** を起動します。
-4. `README.md` を含むプロジェクトを開きます。
+4. 新しいウィンドウで、`README.md` を含むプロジェクトを開きます。
 5. サイドバーを開く → **⚙️ Generate Multilingual READMEs** をクリックします。
 
 ---

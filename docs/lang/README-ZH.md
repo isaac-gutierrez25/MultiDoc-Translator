@@ -38,15 +38,24 @@ Visual Studio Code 扩展可使用 **free Google Translate API** 自动生成多
 
 ## 🧩 安装
 
-1. 克隆或下载此存储库：
-   ```bash
-   git clone https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes.git
-   cd Auto-Translate-Readmes
-   npm install
-   ```
+### 来自市场（推荐）
+
+1. 打开**Visual Studio Code**。
+2. 转到 **Extensions** 视图 (`Ctrl+Shift+X`)。
+3. 搜索 `Auto Translate Readmes`。
+4. 单击**Install**。
+
+### 用于开发（来自源代码）
+
+1. 克隆此存储库：
+    ```bash
+    git clone [https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes.git](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes.git)
+    cd Auto-Translate-Readmes
+    npm install
+    ```
 2. 在 VS Code 中打开该文件夹。
 3. 按 **F5** 启动 **Extension Development Host**。
-4. 打开包含 `README.md` 的项目。
+4. 在新窗口中，打开包含 `README.md` 的项目。
 5. 打开侧边栏 → 单击 **⚙️ Generate Multilingual READMEs**。
 
 ---

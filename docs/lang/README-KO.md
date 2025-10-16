@@ -38,15 +38,24 @@
 
 ## 🧩 설치
 
-1. 다음 저장소를 복제하거나 다운로드합니다.
-   ```bash
-   git clone https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes.git
-   cd Auto-Translate-Readmes
-   npm install
-   ```
+### 마켓플레이스에서(권장)
+
+1. **Visual Studio Code**을(를) 엽니다.
+2. **Extensions** 보기(`Ctrl+Shift+X`)로 이동합니다.
+3. `Auto Translate Readmes`을(를) 검색하세요.
+4. **Install**을 클릭하세요.
+
+### 개발용(소스 코드에서)
+
+1. 이 저장소를 복제합니다.
+    ```bash
+    git clone [https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes.git](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes.git)
+    cd Auto-Translate-Readmes
+    npm install
+    ```
 2. VS Code에서 폴더를 엽니다.
 3. **F5**을 눌러 **Extension Development Host**을 실행합니다.
-4. `README.md`이 포함된 프로젝트를 엽니다.
+4. 새 창에서 `README.md`이 포함된 프로젝트를 엽니다.
 5. 사이드바를 열고 → **⚙️ Generate Multilingual READMEs**을 클릭합니다.
 
 ---

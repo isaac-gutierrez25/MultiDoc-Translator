@@ -38,15 +38,24 @@ Rozszerzenie Visual Studio Code, które automatycznie generuje wielojęzyczne pl
 
 ## 🧩 Instalacja
 
-1. Sklonuj lub pobierz to repozytorium:
-   ```bash
-   git clone https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes.git
-   cd Auto-Translate-Readmes
-   npm install
-   ```
+### Z Marketplace (zalecane)
+
+1. Otwórz **Visual Studio Code**.
+2. Przejdź do widoku **Extensions** (`Ctrl+Shift+X`).
+3. Wyszukaj `Auto Translate Readmes`.
+4. Kliknij **Install**.
+
+### Dla rozwoju (z kodu źródłowego)
+
+1. Sklonuj to repozytorium:
+    ```bash
+    git clone [https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes.git](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes.git)
+    cd Auto-Translate-Readmes
+    npm install
+    ```
 2. Otwórz folder w VS Code.
 3. Naciśnij **F5**, aby uruchomić **Extension Development Host**.
-4. Otwórz projekt zawierający plik `README.md`.
+4. W nowym oknie otwórz projekt zawierający plik `README.md`.
 5. Otwórz pasek boczny → kliknij **⚙️ Generate Multilingual READMEs**.
 
 ---

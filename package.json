@@ -2,7 +2,7 @@
   "name": "auto-translate-readmes",
   "displayName": "Auto Translate Readmes",
   "description": "Generate multilingual README files automatically inside VS Code — now powered by free Google Translate API (no key required).",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "publisher": "fatonyahmadfauzi",
   "engines": {
     "vscode": "^1.85.0"
@@ -18,7 +18,7 @@
     "onView:autoTranslateView",
     "onCommand:auto-translate-readmes.run"
   ],
-  "main": "./out/extension.js",
+  "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
@@ -88,11 +88,9 @@
   },
   "homepage": "https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes#readme",
   "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
+    "vscode:prepublish": "node ./esbuild.js",
+    "compile": "node ./esbuild.js",
     "lint": "eslint src --ext ts",
-    "pretest": "npm run compile && npm run lint",
     "test": "vscode-test"
   },
   "devDependencies": {
@@ -100,6 +98,7 @@
     "@types/node": "22.x",
     "@types/node-fetch": "^2.6.13",
     "@types/vscode": "^1.85.0",
+    "esbuild": "^0.25.11",
     "eslint": "^9.36.0",
     "node-fetch": "^2.7.0",
     "typescript": "^5.9.3"
