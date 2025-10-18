@@ -14,16 +14,16 @@
 
 ---
 
-Visual Studio Code-Erweiterung, die mithilfe von **free Google Translate API** automatisch mehrsprachige `README.md`-Dateien generiert – kein API-Schlüssel erforderlich.
+Visual Studio Code-Erweiterung, die mithilfe der **kostenlosen Google Translate-API** automatisch mehrsprachige `README.md`-Dateien generiert – kein API-Schlüssel erforderlich.
 
 ---
 
 ## ✨ Funktionen
 
-- 🌍 `README.md` automatisch in **10+ languages** übersetzen.
+- 🌍 `README.md` automatisch in **10+ Sprachen** übersetzen.
 - 🔒 Schützt Codeblöcke, Inline-Code und URLs vor der Übersetzung.
-- 💬 Fügt automatisch einen Sprachumschaltblock (`🌐 Available in other languages:`) hinzu.
-- 💾 Ermöglicht optionales **custom API key input** (z. B. Google Cloud, DeepL).
+- 💬 Fügt einen Sprachumschaltblock hinzu (`🌐 Available in other languages: [Bahasa Indonesia](docs/lang/README-ID.md)`)
+- 💾 Ermöglicht optionale **benutzerdefinierte API-Schlüsseleingabe** (z. B. Google Cloud, DeepL).
 - 🧠 Verwendet das integrierte Google Translate (kein Konto erforderlich).
 - ⚙️ Einfache 1-Klick-Seitenleistenoberfläche.
 
@@ -32,7 +32,7 @@ Visual Studio Code-Erweiterung, die mithilfe von **free Google Translate API** a
 ## ✅ Unterstützte VS-Codeversionen
 
 - Mindestversion: **1.85.0**
-- Getestet auf **Windows**, **macOS** und **Linux**.
+- Getestet unter **Windows**, **macOS** und **Linux**.
 
 ---
 
@@ -41,9 +41,9 @@ Visual Studio Code-Erweiterung, die mithilfe von **free Google Translate API** a
 ### Vom Marktplatz (empfohlen)
 
 1. Öffnen Sie **Visual Studio Code**.
-2. Gehen Sie zur Ansicht **Extensions** (`Ctrl+Shift+X`).
+2. Gehen Sie zur Ansicht **Erweiterungen** (`Ctrl+Shift+X`).
 3. Suchen Sie nach `Auto Translate Readmes`.
-4. Klicken Sie auf **Install**.
+4. Klicken Sie auf **Installieren**.
 
 ### Für die Entwicklung (aus Quellcode)
 
@@ -54,23 +54,23 @@ Visual Studio Code-Erweiterung, die mithilfe von **free Google Translate API** a
     npm install
     ```
 2. Öffnen Sie den Ordner in VS Code.
-3. Drücken Sie **F5**, um **Extension Development Host** zu starten.
+3. Drücken Sie **F5**, um den **Extension Development Host** zu starten.
 4. Öffnen Sie im neuen Fenster Ihr Projekt, das ein `README.md` enthält.
-5. Öffnen Sie die Seitenleiste → klicken Sie auf **⚙️ Generate Multilingual READMEs**.
+5. Öffnen Sie die Seitenleiste → klicken Sie auf **⚙️ Mehrsprachige READMEs generieren**.
 
 ---
 
 ## ⌨️ Befehle und Verknüpfungen
 
-| Befehlsname | Befehls-ID | Verknüpfung |
+| Befehlsname | Befehls-ID | Abkürzung |
 | ----------------------------- | ---------------------------- | -------- |
-| Generieren Sie mehrsprachige READMEs | `auto-translate-readmes.run` | _N/A_ |
+| Generate Multilingual READMEs | `auto-translate-readmes.run` | _N/A_    |
 
 ---
 
 ## 🧠 Beispiel
 
-**Before:**
+**Vor:**
 
 ```md
 # My Awesome Extension
@@ -78,7 +78,7 @@ Visual Studio Code-Erweiterung, die mithilfe von **free Google Translate API** a
 A simple extension to help developers write better code.
 ```
 
-**After (Translated):**
+**Nachher (übersetzt):**
 
 ```md
 # My Awesome Extension
@@ -104,7 +104,7 @@ Mit der Seitenleiste können Sie:
 
 ## 🛠️ Entwicklung
 
-TypeScript kompilieren:
+Kompilieren Sie TypeScript:
 
 ```bash
 npm run compile
@@ -130,17 +130,17 @@ npm test
 2. Führen Sie `npm install` aus, um Abhängigkeiten zu installieren.
 3. Nehmen Sie Ihre Änderungen vor.
 4. Kompilieren Sie TypeScript: `npm run compile`.
-5. Testen Sie in VS Code (drücken Sie **F5** → Extension Development Host).
+5. Testen Sie im VS-Code (drücken Sie **F5** → Extension Development Host).
 6. Senden Sie eine Pull-Anfrage.
 
 ---
 
 ## 🐞 Fehler und Probleme
 
-Melden Sie Probleme auf dem [GitHub Issues page](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/issues).
+Melden Sie Probleme auf der [GitHub-Problemseite](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/issues).
 
 ---
 
 ## 🧾 Lizenz
 
-MEINE Lizenz © [Fatony Ahmad Fauzi](../../LICENSE)
+MIT License © [Fatony Ahmad Fauzi](../../LICENSE)

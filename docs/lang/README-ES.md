@@ -14,16 +14,16 @@
 
 ---
 
-Extensión de Visual Studio Code que genera automáticamente archivos `README.md` multilingües utilizando **free Google Translate API**; no se requiere clave API.
+Extensión de Visual Studio Code que genera automáticamente archivos `README.md` multilingües utilizando la **API gratuita de Google Translate**; no se requiere clave API.
 
 ---
 
 ## ✨ Características
 
-- 🌍 Traducir automáticamente `README.md` a **10+ languages**.
+- 🌍 Traducir automáticamente `README.md` a **más de 10 idiomas**.
 - 🔒 Protege bloques de código, código en línea y URL para que no se traduzcan.
-- 💬 Agrega un bloque de cambio de idioma (`🌐 Available in other languages:`) automáticamente.
-- 💾 Permite **custom API key input** opcional (por ejemplo, Google Cloud, DeepL).
+- 💬 Agrega un bloque de cambio de idioma (`🌐 Available in other languages: [Bahasa Indonesia](docs/lang/README-ID.md)`)
+- 💾 Permite **entrada de clave API personalizada** opcional (por ejemplo, Google Cloud, DeepL).
 - 🧠 Utiliza el Traductor de Google integrado (no se necesita cuenta).
 - ⚙️ Interfaz de barra lateral sencilla con 1 clic.
 
@@ -40,10 +40,10 @@ Extensión de Visual Studio Code que genera automáticamente archivos `README.md
 
 ### Desde Marketplace (recomendado)
 
-1. Abra **Visual Studio Code**.
-2. Vaya a la vista **Extensions** (`Ctrl+Shift+X`).
+1. Abra **Código de Visual Studio**.
+2. Vaya a la vista **Extensiones** (`Ctrl+Shift+X`).
 3. Busque `Auto Translate Readmes`.
-4. Haga clic en **Install**.
+4. Haga clic en **Instalar**.
 
 ### Para desarrollo (a partir del código fuente)
 
@@ -54,9 +54,9 @@ Extensión de Visual Studio Code que genera automáticamente archivos `README.md
     npm install
     ```
 2. Abra la carpeta en VS Code.
-3. Presione **F5** para iniciar **Extension Development Host**.
+3. Presione **F5** para iniciar el **Host de desarrollo de extensiones**.
 4. En la nueva ventana, abra su proyecto que contiene `README.md`.
-5. Abra la barra lateral → haga clic en **⚙️ Generate Multilingual READMEs**.
+5. Abra la barra lateral → haga clic en **⚙️ Generar archivos LÉAME multilingües**.
 
 ---
 
@@ -64,13 +64,13 @@ Extensión de Visual Studio Code que genera automáticamente archivos `README.md
 
 | Nombre del comando | ID de comando | Atajo |
 | ----------------------------- | ---------------------------- | -------- |
-| Generar archivos README multilingües | `auto-translate-readmes.run` | _N/A_ |
+| Generate Multilingual READMEs | `auto-translate-readmes.run` | _N/A_    |
 
 ---
 
 ## 🧠 Ejemplo
 
-**Before:**
+**Antes:**
 
 ```md
 # My Awesome Extension
@@ -78,12 +78,12 @@ Extensión de Visual Studio Code que genera automáticamente archivos `README.md
 A simple extension to help developers write better code.
 ```
 
-**After (Translated):**
+**Después (Traducido):**
 
 ```md
 # My Awesome Extension
 
-> 🌐 Disponible en otros idiomas: [English](../../README.md) | [Deutsch](README-DE.md) | [Français](README-FR.md)
+> 🌐 Disponible en otros idiomas: [English](../../README.md) | [Bahasa Indonesia](README-ID.md) | [Français](README-FR.md) | [Deutsch](README-DE.md) | [日本語](README-JP.md) | [中文](README-ZH.md) | [Polski](README-PL.md) | [Русский](README-RU.md) | [Português](README-PT.md) | [한국어](README-KO.md)
 
 ---
 
@@ -110,7 +110,7 @@ Compilar TypeScript:
 npm run compile
 ```
 
-Código de pelusa:
+código Lint:
 
 ```bash
 npm run lint
@@ -130,17 +130,17 @@ npm test
 2. Ejecute `npm install` para instalar dependencias.
 3. Realice sus cambios.
 4. Compile TypeScript: `npm run compile`.
-5. Pruebe en VS Code (presione **F5** → Extension Development Host).
+5. Pruebe en VS Code (presione **F5** → Host de desarrollo de extensiones).
 6. Envíe una solicitud de extracción.
 
 ---
 
 ## 🐞 Errores y problemas
 
-Informar problemas en [GitHub Issues page](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/issues).
+Informar problemas en la [página de problemas de GitHub](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/issues).
 
 ---
 
 ## 🧾 Licencia
 
-MI licencia © [Fatony Ahmad Fauzi](../../LICENSE)
+MIT License © [Fatony Ahmad Fauzi](../../LICENSE)

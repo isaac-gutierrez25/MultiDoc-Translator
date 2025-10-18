@@ -14,16 +14,16 @@
 
 ---
 
-Ekstensi Visual Studio Code yang secara otomatis menghasilkan file `README.md` multibahasa menggunakan **free Google Translate API** — tidak memerlukan kunci API.
+Ekstensi Visual Studio Code yang secara otomatis menghasilkan file `README.md` multibahasa menggunakan **API Google Terjemahan gratis** — tidak memerlukan kunci API.
 
 ---
 
 ## ✨ Fitur
 
-- 🌍 Terjemahkan `README.md` secara otomatis ke **10+ languages**.
+- 🌍 Terjemahkan `README.md` secara otomatis ke **10+ bahasa**.
 - 🔒 Melindungi blok kode, kode sebaris, dan URL agar tidak diterjemahkan.
-- 💬 Menambahkan blok pengalih bahasa (`🌐 Available in other languages:`) secara otomatis.
-- 💾 Mengizinkan **custom API key input** opsional (mis., Google Cloud, DeepL).
+- 💬 Menambahkan blok pengalih bahasa (`🌐 Available in other languages: [Bahasa Indonesia](docs/lang/README-ID.md)`)
+- 💾 Mengizinkan **input kunci API khusus** opsional (misalnya, Google Cloud, DeepL).
 - 🧠 Menggunakan Google Terjemahan bawaan (tidak perlu akun).
 - ⚙️ Antarmuka sidebar 1-klik yang sederhana.
 
@@ -40,10 +40,10 @@ Ekstensi Visual Studio Code yang secara otomatis menghasilkan file `README.md` m
 
 ### Dari Marketplace (Disarankan)
 
-1. Buka **Visual Studio Code**.
-2. Pergi ke tampilan **Extensions** (`Ctrl+Shift+X`).
+1. Buka **Kode Visual Studio**.
+2. Buka tampilan **Ekstensi** (`Ctrl+Shift+X`).
 3. Cari `Auto Translate Readmes`.
-4. Klik **Install**.
+4. Klik **Instal**.
 
 ### Untuk Pengembangan (dari Kode Sumber)
 
@@ -56,21 +56,21 @@ Ekstensi Visual Studio Code yang secara otomatis menghasilkan file `README.md` m
 2. Buka folder di VS Code.
 3. Tekan **F5** untuk meluncurkan **Extension Development Host**.
 4. Di jendela baru, buka proyek Anda yang berisi `README.md`.
-5. Buka bilah sisi → klik **⚙️ Generate Multilingual READMEs**.
+5. Buka sidebar → klik **⚙️ Hasilkan README Multibahasa**.
 
 ---
 
 ## ⌨️ Perintah & Pintasan
 
-| Nama Perintah | ID Perintah | Pintasan |
+| Nama Perintah | ID Perintah | Jalan pintas |
 | ----------------------------- | ---------------------------- | -------- |
-| Hasilkan README Multibahasa | `auto-translate-readmes.run` | _T/A_ |
+| Generate Multilingual READMEs | `auto-translate-readmes.run` | _N/A_    |
 
 ---
 
 ## 🧠 Contoh
 
-**Before:**
+**Sebelum:**
 
 ```md
 # My Awesome Extension
@@ -78,7 +78,7 @@ Ekstensi Visual Studio Code yang secara otomatis menghasilkan file `README.md` m
 A simple extension to help developers write better code.
 ```
 
-**After (Translated):**
+**Setelah (Diterjemahkan):**
 
 ```md
 # My Awesome Extension
@@ -104,13 +104,13 @@ Bilah samping memungkinkan Anda untuk:
 
 ## 🛠️ Perkembangan
 
-Kompilasi Skrip Ketik:
+Kompilasi TypeScript:
 
 ```bash
 npm run compile
 ```
 
-Kode serat:
+Lint kode:
 
 ```bash
 npm run lint
@@ -137,10 +137,10 @@ npm test
 
 ## 🐞 Bug & Masalah
 
-Laporkan masalah di [GitHub Issues page](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/issues).
+Laporkan masalah di [halaman Masalah GitHub](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/issues).
 
 ---
 
 ## 🧾 Lisensi
 
-Lisensi SAYA © [Fatony Ahmad Fauzi](../../LICENSE)
+MIT License © [Fatony Ahmad Fauzi](../../LICENSE)

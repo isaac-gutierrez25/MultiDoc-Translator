@@ -2,7 +2,7 @@
 
 [![VS Code](https://img.shields.io/badge/VS%20Code-1.85.0+-blue.svg)](https://code.visualstudio.com/)
 [![Version](https://img.shields.io/github/v/release/fatonyahmadfauzi/Auto-Translate-Readmes?color=blue.svg)](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/releases)
-[![License: MIT](https://img.shields.io/github/license/fatonyahmadfauzi/Auto-Translate-Readmes?color=green.svg)](../../LICENSE)
+[![License: MIT](https://img.shields.io/github/license/fatonyahmadfauzi/Auto-Translate-Readmes?color=green.svg)](LICENSE)
 [![Build Status](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/actions/workflows/main.yml/badge.svg)](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/actions)
 [![Repo Size](https://img.shields.io/github/repo-size/fatonyahmadfauzi/Auto-Translate-Readmes?color=yellow.svg)](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes)
 [![Last Commit](https://img.shields.io/github/last-commit/fatonyahmadfauzi/Auto-Translate-Readmes?color=brightgreen.svg)](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/commits/main)
@@ -22,7 +22,7 @@ Visual Studio Code extension that automatically generates multilingual `README.m
 
 - 🌍 Automatically translate `README.md` into **10+ languages**.
 - 🔒 Protects code blocks, inline code, and URLs from being translated.
-- 💬 Adds a language switcher block (`🌐 Available in other languages:`) automatically.
+- 💬 Adds a language switcher block (`🌐 Available in other languages: [Bahasa Indonesia](docs/lang/README-ID.md)`)
 - 💾 Allows optional **custom API key input** (e.g., Google Cloud, DeepL).
 - 🧠 Uses built-in Google Translate (no account needed).
 - ⚙️ Simple 1-click sidebar interface.

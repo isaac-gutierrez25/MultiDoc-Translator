@@ -8,6 +8,72 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ---
 
+## [1.1.0] – 2025-10-18
+
+### ✨ Added
+
+- **Smart Paragraph Grouping Engine**  
+  Added intelligent paragraph grouping to translate multi-line paragraphs as cohesive blocks while preserving the original Markdown layout.  
+  → Produces more accurate, context-aware translations without changing line alignment.
+
+- **Diff Preview Mode (Experimental)**  
+  Users can now preview translation diffs before saving output using  
+  `auto-translate-readmes.previewDiff` command in VS Code Output Panel.
+
+- **Auto-Detect README Charset**  
+  Automatically detects and preserves source file encoding (`UTF-8`, `UTF-16`, or `UTF-8-BOM`) for cross-platform consistency.
+
+---
+
+### 🔧 Changed
+
+- **Inline Markdown Tokenizer v3**  
+  Updated tokenizer to protect complex Markdown combinations:
+
+  - `**bold + _italic_ mix**`
+  - `[Click _here_](url)`
+  - Inline HTML elements like `<span>` or `<img>`
+
+- **Code Block Consistency**  
+  Code blocks are now perfectly preserved with original indentation and spacing (no trimming or extra newlines).
+
+- **Improved Language Switcher Formatting**  
+  The multilingual switcher now automatically adjusts punctuation and spacing style for each target language (e.g., Japanese full-width colons, French spaces before colons).
+
+- **More Stable Google API Integration**  
+  Now includes automatic fallback to a secondary endpoint when `translate.googleapis.com` hits rate limits or network errors.
+
+---
+
+### 🐞 Fixed
+
+- **Bold Handling (Edge Case)**  
+  Fixed cases where `**Before:**` or `**After (Absolute):**` were split into `* *Before:**`.
+
+- **Non-breaking Space in Lists**  
+  Prevented issues where hyphens `-` in list items merged directly with text in some languages (e.g., French or Russian).
+
+- **Preserve Trailing Newlines**  
+  Translation output now retains the same number of blank lines as the source file — none are trimmed.
+
+- **Emoji Stability**  
+  Fixed encoding issues where emojis or special characters were dropped during translation.
+
+- **Cross-Platform EOL Consistency**  
+  Ensures consistent end-of-line characters (`\r\n` for Windows, `\n` for Unix) according to the source file.
+
+---
+
+### 🚀 Developer Notes
+
+- Translation logic is now modularized under `translateBlock()` with async batching for ~30% faster translation.
+- Each generated README includes a metadata comment:  
+  `<!-- Auto-Translated v1.1.0 -->`  
+  to track build versions automatically.
+- Ready for **VS Code Marketplace v1.1 stable release**.
+
+---
+
 ## [1.0.9] - 2025-10-17
 
 ### Changed

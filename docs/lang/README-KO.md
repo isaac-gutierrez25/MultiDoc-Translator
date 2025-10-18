@@ -14,16 +14,16 @@
 
 ---
 
-**free Google Translate API**을 사용하여 다국어 `README.md` 파일을 자동으로 생성하는 Visual Studio Code 확장입니다. API 키가 필요하지 않습니다.
+**무료 Google 번역 API**를 사용하여 다국어 `README.md` 파일을 자동으로 생성하는 Visual Studio Code 확장입니다. API 키가 필요하지 않습니다.
 
 ---
 
 ## ✨ 특징
 
-- 🌍 `README.md`을 **10+ languages**로 자동 번역합니다.
+- 🌍 `README.md`을 **10개 이상의 언어**로 자동 번역합니다.
 - 🔒 코드 블록, 인라인 코드 및 URL이 번역되지 않도록 보호합니다.
-- 💬 언어 전환기 블록(`🌐 Available in other languages:`)을 자동으로 추가합니다.
-- 💾 선택적인 **custom API key input**(예: Google Cloud, DeepL)을 허용합니다.
+- 💬 언어 전환기 블록을 추가합니다(`🌐 Available in other languages: [Bahasa Indonesia](docs/lang/README-ID.md)`).
+- 💾 선택적 **맞춤 API 키 입력**(예: Google Cloud, DeepL)을 허용합니다.
 - 🧠 내장된 Google 번역을 사용합니다(계정이 필요하지 않음).
 - ⚙️ 간단한 원클릭 사이드바 인터페이스.
 
@@ -40,10 +40,10 @@
 
 ### 마켓플레이스에서(권장)
 
-1. **Visual Studio Code**을(를) 엽니다.
-2. **Extensions** 보기(`Ctrl+Shift+X`)로 이동합니다.
+1. **Visual Studio Code**를 엽니다.
+2. **확장** 보기(`Ctrl+Shift+X`)로 이동합니다.
 3. `Auto Translate Readmes`을(를) 검색하세요.
-4. **Install**을 클릭하세요.
+4. **설치**를 클릭합니다.
 
 ### 개발용(소스 코드에서)
 
@@ -54,23 +54,23 @@
     npm install
     ```
 2. VS Code에서 폴더를 엽니다.
-3. **F5**을 눌러 **Extension Development Host**을 실행합니다.
+3. **F5**를 눌러 **확장 개발 호스트**를 시작합니다.
 4. 새 창에서 `README.md`이 포함된 프로젝트를 엽니다.
-5. 사이드바를 열고 → **⚙️ Generate Multilingual READMEs**을 클릭합니다.
+5. 사이드바를 열고 → **⚙️ 다국어 README 생성**을 클릭합니다.
 
 ---
 
 ## ⌨️ 명령 및 단축키
 
-| 명령 이름 | 명령 ID | 바로가기 |
+| 명령 이름 | 명령 ID | 지름길 |
 | ----------------------------- | ---------------------------- | -------- |
-| 다국어 README 생성 | `auto-translate-readmes.run` | _해당 없음_ |
+| Generate Multilingual READMEs | `auto-translate-readmes.run` | _N/A_    |
 
 ---
 
 ## 🧠 예
 
-**Before:**
+**전에:**
 
 ```md
 # My Awesome Extension
@@ -78,7 +78,7 @@
 A simple extension to help developers write better code.
 ```
 
-**After (Translated):**
+**이후(번역됨):**
 
 ```md
 # My Awesome Extension
@@ -110,7 +110,7 @@ TypeScript 컴파일:
 npm run compile
 ```
 
-린트 코드:
+Lint 코드:
 
 ```bash
 npm run lint
@@ -129,7 +129,7 @@ npm test
 1. 저장소를 포크하십시오.
 2. `npm install`을 실행하여 종속성을 설치합니다.
 3. 변경합니다.
-4. TypeScript를 컴파일합니다: `npm run compile`.
+4. TypeScript: `npm run compile`을 컴파일합니다.
 5. VS Code에서 테스트합니다(**F5** → 확장 개발 호스트 누르기).
 6. 풀 요청(Pull Request)을 제출하세요.
 
@@ -137,10 +137,10 @@ npm test
 
 ## 🐞 버그 및 문제
 
-[GitHub Issues page](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/issues)에 대한 문제를 보고하세요.
+[GitHub 문제 페이지](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/issues).)에서 문제를 신고하세요.
 
 ---
 
 ## 🧾 라이센스
 
-내 라이센스 © [Fatony Ahmad Fauzi](../../LICENSE)
+MIT License © [파토니 아마드 파우지](../../LICENSE)

@@ -14,16 +14,16 @@
 
 ---
 
-Rozszerzenie Visual Studio Code, które automatycznie generuje wielojęzyczne pliki `README.md` przy użyciu **free Google Translate API** — nie jest wymagany żaden klucz API.
+Rozszerzenie Visual Studio Code, które automatycznie generuje wielojęzyczne pliki `README.md` przy użyciu **bezpłatnego interfejsu API Tłumacza Google** — nie jest wymagany żaden klucz API.
 
 ---
 
 ## ✨ Funkcje
 
-- 🌍 Automatycznie przetłumacz `README.md` na **10+ languages**.
+- 🌍 Automatycznie przetłumacz `README.md` na **ponad 10 języków**.
 - 🔒 Chroni bloki kodu, kod wbudowany i adresy URL przed tłumaczeniem.
-- 💬 Automatycznie dodaje blok przełączania języka (`🌐 Available in other languages:`).
-- 💾 Umożliwia opcjonalne **custom API key input** (np. Google Cloud, DeepL).
+- 💬 Dodaje blok zmiany języka (`🌐 Available in other languages: [Bahasa Indonesia](docs/lang/README-ID.md)`)
+- 💾 Umożliwia opcjonalne **wprowadzanie niestandardowego klucza API** (np. Google Cloud, DeepL).
 - 🧠 Korzysta z wbudowanego Tłumacza Google (nie wymaga konta).
 - ⚙️ Prosty interfejs paska bocznego jednym kliknięciem.
 
@@ -31,7 +31,7 @@ Rozszerzenie Visual Studio Code, które automatycznie generuje wielojęzyczne pl
 
 ## ✅ Obsługiwane wersje kodu VS
 
-- Minimalna wersja: **1.85.0**
+- Wersja minimalna: **1.85.0**
 - Testowano na **Windows**, **macOS** i **Linux**.
 
 ---
@@ -40,10 +40,10 @@ Rozszerzenie Visual Studio Code, które automatycznie generuje wielojęzyczne pl
 
 ### Z Marketplace (zalecane)
 
-1. Otwórz **Visual Studio Code**.
-2. Przejdź do widoku **Extensions** (`Ctrl+Shift+X`).
+1. Otwórz **Kod Visual Studio**.
+2. Przejdź do widoku **Rozszerzenia** (`Ctrl+Shift+X`).
 3. Wyszukaj `Auto Translate Readmes`.
-4. Kliknij **Install**.
+4. Kliknij **Zainstaluj**.
 
 ### Dla rozwoju (z kodu źródłowego)
 
@@ -54,9 +54,9 @@ Rozszerzenie Visual Studio Code, które automatycznie generuje wielojęzyczne pl
     npm install
     ```
 2. Otwórz folder w VS Code.
-3. Naciśnij **F5**, aby uruchomić **Extension Development Host**.
+3. Naciśnij **F5**, aby uruchomić **Host rozwoju rozszerzeń**.
 4. W nowym oknie otwórz projekt zawierający plik `README.md`.
-5. Otwórz pasek boczny → kliknij **⚙️ Generate Multilingual READMEs**.
+5. Otwórz pasek boczny → kliknij **⚙️ Generuj wielojęzyczne pliki README**.
 
 ---
 
@@ -64,13 +64,13 @@ Rozszerzenie Visual Studio Code, które automatycznie generuje wielojęzyczne pl
 
 | Nazwa polecenia | Identyfikator polecenia | Skrót |
 | ----------------------------- | ---------------------------- | -------- |
-| Generuj wielojęzyczne pliki README | `auto-translate-readmes.run` | _Nie dotyczy_ |
+| Generate Multilingual READMEs | `auto-translate-readmes.run` | _N/A_    |
 
 ---
 
 ## 🧠 Przykład
 
-**Before:**
+**Zanim:**
 
 ```md
 # My Awesome Extension
@@ -78,7 +78,7 @@ Rozszerzenie Visual Studio Code, które automatycznie generuje wielojęzyczne pl
 A simple extension to help developers write better code.
 ```
 
-**After (Translated):**
+**Po (przetłumaczone):**
 
 ```md
 # My Awesome Extension
@@ -104,13 +104,13 @@ Pasek boczny umożliwia:
 
 ## 🛠️Rozwój
 
-Skompiluj TypeScript:
+Kompiluj TypeScript:
 
 ```bash
 npm run compile
 ```
 
-Kod Linta:
+Lint kod:
 
 ```bash
 npm run lint
@@ -130,17 +130,17 @@ npm test
 2. Uruchom `npm install`, aby zainstalować zależności.
 3. Wprowadź zmiany.
 4. Skompiluj TypeScript: `npm run compile`.
-5. Przetestuj w kodzie VS (naciśnij **F5** → Host rozwoju rozszerzenia).
+5. Przetestuj kod VS (naciśnij **F5** → Host rozwoju rozszerzenia).
 6. Prześlij żądanie ściągnięcia.
 
 ---
 
 ## 🐞 Błędy i problemy
 
-Zgłoś problemy na stronie [GitHub Issues page](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/issues).
+Zgłaszaj problemy na [stronie problemów z GitHubem](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/issues).
 
 ---
 
 ## 🧾 Licencja
 
-MOJA Licencja © [Fatony Ahmad Fauzi](../../LICENSE)
+MIT License © [Fatony Ahmad Fauzi](../../LICENSE)

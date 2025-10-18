@@ -14,16 +14,16 @@
 
 ---
 
-**free Google Translate API** を使用して多言語 `README.md` ファイルを自動的に生成する Visual Studio Code 拡張機能 (API キーは必要ありません)。
+**無料の Google Translate API** を使用して多言語 `README.md` ファイルを自動的に生成する Visual Studio Code 拡張機能 — API キーは必要ありません。
 
 ---
 
 ## ✨ 特徴
 
-- 🌍 `README.md` を **10+ languages** に自動的に変換します。
+- 🌍 `README.md` を **10 以上の言語**に自動的に翻訳します。
 - 🔒 コード ブロック、インライン コード、URL が翻訳されないように保護します。
-- 💬 言語スイッチャー ブロック (`🌐 Available in other languages:`) を自動的に追加します。
-- 💾 オプションの **custom API key input** (例: Google Cloud、DeepL) を許可します。
+- 💬 言語スイッチャー ブロックを追加します (`🌐 Available in other languages: [Bahasa Indonesia](docs/lang/README-ID.md)`)
+- 💾 オプションの **カスタム API キー入力** (例: Google Cloud、DeepL) を許可します。
 - 🧠 内蔵の Google 翻訳を使用します (アカウントは必要ありません)。
 - ⚙️ シンプルな 1 クリックのサイドバー インターフェイス。
 
@@ -32,7 +32,7 @@
 ## ✅ サポートされている VS コードのバージョン
 
 - 最小バージョン: **1.85.0**
-- **Windows**、**macOS**、および **Linux** でテスト済み。
+- **Windows**、**macOS**、**Linux** でテスト済み。
 
 ---
 
@@ -41,9 +41,9 @@
 ### マーケットプレイスから (推奨)
 
 1. **Visual Studio Code** を開きます。
-2. **Extensions** ビュー (`Ctrl+Shift+X`) に移動します。
+2. **拡張機能** ビュー (`Ctrl+Shift+X`) に移動します。
 3. `Auto Translate Readmes` を検索します。
-4. 「**Install**」をクリックします。
+4. [**インストール**] をクリックします。
 
 ### 開発用 (ソースコードから)
 
@@ -56,21 +56,21 @@
 2. VS Code でフォルダーを開きます。
 3. **F5** を押して **Extension Development Host** を起動します。
 4. 新しいウィンドウで、`README.md` を含むプロジェクトを開きます。
-5. サイドバーを開く → **⚙️ Generate Multilingual READMEs** をクリックします。
+5. サイドバーを開き、[**⚙️多言語 README の生成**] をクリックします。
 
 ---
 
 ## ⌨️ コマンドとショートカット
 
-|コマンド名 |コマンドID |ショートカット |
+| コマンド名 | コマンドID | ショートカット |
 | ----------------------------- | ---------------------------- | -------- |
-|多言語の README を生成する | `auto-translate-readmes.run` | _該当なし_ |
+| Generate Multilingual READMEs | `auto-translate-readmes.run` | _N/A_    |
 
 ---
 
 ## 🧠 例
 
-**Before:**
+**前に：**
 
 ```md
 # My Awesome Extension
@@ -78,7 +78,7 @@
 A simple extension to help developers write better code.
 ```
 
-**After (Translated):**
+**後（翻訳後）：**
 
 ```md
 # My Awesome Extension
@@ -94,7 +94,7 @@ Une extension Visual Studio Code qui aide les développeurs à mieux écrire du 
 
 ## 🧠 サイドバーインターフェイス
 
-サイドバーを使用すると、次のことができます。
+サイドバーを使用すると、次のことが可能になります。
 
 - 🗝️ 独自の API キーを入力して保存します (オプション)
 - ⚙️ ボタン 1 つをクリックすると、翻訳されたすべての README ファイルが生成されます
@@ -110,7 +110,7 @@ TypeScript をコンパイルします。
 npm run compile
 ```
 
-lint コード:
+Lint コード:
 
 ```bash
 npm run lint
@@ -129,18 +129,18 @@ npm test
 1. リポジトリをフォークします。
 2. `npm install` を実行して依存関係をインストールします。
 3. 変更を加えます。
-4. TypeScript をコンパイルします: `npm run compile`。
-5. VS Code でテストします (**F5** → 拡張機能開発ホストを押します)。
+4. TypeScript: `npm run compile` をコンパイルします。
+5. VS Code でテストします (**F5** を押して → 拡張機能開発ホスト)。
 6. プルリクエストを送信します。
 
 ---
 
 ## 🐞 バグと問題
 
-[GitHub Issues page](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/issues) に関する問題を報告してください。
+[GitHub の問題ページ](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/issues).) で問題を報告してください。
 
 ---
 
 ## 🧾 ライセンス
 
-私のライセンス © [Fatony Ahmad Fauzi](../../LICENSE)
+MIT License © [ファトニー・アハマド・ファウジ](../../LICENSE)

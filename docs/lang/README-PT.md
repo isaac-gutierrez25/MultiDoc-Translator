@@ -14,16 +14,16 @@
 
 ---
 
-Extensão do Visual Studio Code que gera automaticamente arquivos `README.md` multilíngues usando **free Google Translate API** — nenhuma chave de API é necessária.
+Extensão do Visual Studio Code que gera automaticamente arquivos `README.md` multilíngues usando a **API gratuita do Google Translate** — sem necessidade de chave de API.
 
 ---
 
 ## ✨ Recursos
 
-- 🌍 Traduza automaticamente `README.md` em **10+ languages**.
+- 🌍 Traduzir automaticamente `README.md` para **mais de 10 idiomas**.
 - 🔒 Protege blocos de código, código embutido e URLs contra tradução.
-- 💬 Adiciona um bloco de alternância de idioma (`🌐 Available in other languages:`) automaticamente.
-- 💾 Permite **custom API key input** opcional (por exemplo, Google Cloud, DeepL).
+- 💬 Adiciona um bloco de alternância de idioma (`🌐 Available in other languages: [Bahasa Indonesia](docs/lang/README-ID.md)`)
+- 💾 Permite **entrada opcional de chave de API personalizada** (por exemplo, Google Cloud, DeepL).
 - 🧠 Usa Google Translate integrado (não é necessária conta).
 - ⚙️ Interface simples da barra lateral com 1 clique.
 
@@ -40,10 +40,10 @@ Extensão do Visual Studio Code que gera automaticamente arquivos `README.md` mu
 
 ### Do Marketplace (recomendado)
 
-1. Abra **Visual Studio Code**.
-2. Vá para a visualização **Extensions** (`Ctrl+Shift+X`).
+1. Abra **Código do Visual Studio**.
+2. Vá para a visualização **Extensões** (`Ctrl+Shift+X`).
 3. Pesquise `Auto Translate Readmes`.
-4. Clique em **Install**.
+4. Clique em **Instalar**.
 
 ### Para Desenvolvimento (do Código Fonte)
 
@@ -54,23 +54,23 @@ Extensão do Visual Studio Code que gera automaticamente arquivos `README.md` mu
     npm install
     ```
 2. Abra a pasta no VS Code.
-3. Pressione **F5** para iniciar o **Extension Development Host**.
+3. Pressione **F5** para iniciar o **Host de desenvolvimento de extensão**.
 4. Na nova janela, abra seu projeto contendo um `README.md`.
-5. Abra a barra lateral → clique em **⚙️ Generate Multilingual READMEs**.
+5. Abra a barra lateral → clique em **⚙️ Gerar READMEs multilíngues**.
 
 ---
 
 ## ⌨️ Comandos e atalhos
 
-| Nome do comando | ID do comando | Atalho |
+| Nome do Comando | ID do comando | Atalho |
 | ----------------------------- | ---------------------------- | -------- |
-| Gere READMEs multilíngues | `auto-translate-readmes.run` | _N/A_ |
+| Generate Multilingual READMEs | `auto-translate-readmes.run` | _N/A_    |
 
 ---
 
 ## 🧠 Exemplo
 
-**Before:**
+**Antes:**
 
 ```md
 # My Awesome Extension
@@ -78,7 +78,7 @@ Extensão do Visual Studio Code que gera automaticamente arquivos `README.md` mu
 A simple extension to help developers write better code.
 ```
 
-**After (Translated):**
+**Depois (traduzido):**
 
 ```md
 # My Awesome Extension
@@ -110,7 +110,7 @@ Compilar TypeScript:
 npm run compile
 ```
 
-Código Lint:
+Lint código:
 
 ```bash
 npm run lint
@@ -129,7 +129,7 @@ npm test
 1. Bifurque o repositório.
 2. Execute `npm install` para instalar dependências.
 3. Faça suas alterações.
-4. Compilar TypeScript: `npm run compile`.
+4. Compile TypeScript: `npm run compile`.
 5. Teste no VS Code (pressione **F5** → Host de desenvolvimento de extensão).
 6. Envie uma solicitação pull.
 
@@ -137,10 +137,10 @@ npm test
 
 ## 🐞 Bugs e problemas
 
-Relate problemas no [GitHub Issues page](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/issues).
+Relate problemas na [página de problemas do GitHub](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/issues).
 
 ---
 
 ## 🧾 Licença
 
-MINHA Licença © [Fatony Ahmad Fauzi](../../LICENSE)
+MIT License © [Fatony Ahmad Fauzi](../../LICENSE)

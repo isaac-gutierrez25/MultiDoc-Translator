@@ -14,16 +14,16 @@
 
 ---
 
-Visual Studio Code 扩展可使用 **free Google Translate API** 自动生成多语言 `README.md` 文件 - 无需 API 密钥。
+Visual Studio Code 扩展使用**免费的 Google Translate API** 自动生成多语言 `README.md` 文件 - 无需 API 密钥。
 
 ---
 
 ## ✨ 特点
 
-- 🌍 自动将 `README.md` 翻译成 **10+ languages**。
+- 🌍 自动将 `README.md` 翻译成 **10 多种语言**。
 - 🔒 保护代码块、内联代码和 URL 不被翻译。
-- 💬 自动添加语言切换块（`🌐 Available in other languages:`）。
-- 💾 允许可选的 **custom API key input** （例如 Google Cloud、DeepL）。
+- 💬 添加语言切换块 (`🌐 Available in other languages: [Bahasa Indonesia](docs/lang/README-ID.md)`)
+- 💾 允许可选的**自定义 API 密钥输入**（例如 Google Cloud、DeepL）。
 - 🧠 使用内置谷歌翻译（无需帐户）。
 - ⚙️ 简单的一键侧边栏界面。
 
@@ -32,7 +32,7 @@ Visual Studio Code 扩展可使用 **free Google Translate API** 自动生成多
 ## ✅ 支持的 VS Code 版本
 
 - 最低版本：**1.85.0**
-- 在 **Windows**、**macOS** 和 **Linux** 上进行测试。
+- 在 **Windows**、**macOS** 和 **Linux** 上测试。
 
 ---
 
@@ -40,10 +40,10 @@ Visual Studio Code 扩展可使用 **free Google Translate API** 自动生成多
 
 ### 来自市场（推荐）
 
-1. 打开**Visual Studio Code**。
-2. 转到 **Extensions** 视图 (`Ctrl+Shift+X`)。
+1. 打开 **Visual Studio Code**。
+2. 转到 **扩展** 视图 (`Ctrl+Shift+X`)。
 3. 搜索 `Auto Translate Readmes`。
-4. 单击**Install**。
+4. 单击“**安装**”。
 
 ### 用于开发（来自源代码）
 
@@ -54,23 +54,23 @@ Visual Studio Code 扩展可使用 **free Google Translate API** 自动生成多
     npm install
     ```
 2. 在 VS Code 中打开该文件夹。
-3. 按 **F5** 启动 **Extension Development Host**。
+3. 按 **F5** 启动 **扩展开发主机**。
 4. 在新窗口中，打开包含 `README.md` 的项目。
-5. 打开侧边栏 → 单击 **⚙️ Generate Multilingual READMEs**。
+5. 打开侧边栏 → 单击 **⚙️ 生成多语言自述文件**。
 
 ---
 
 ## ⌨️ 命令和快捷键
 
-|命令名称 |命令ID |快捷方式|
+| 命令名称 | 命令ID | 捷径 |
 | ----------------------------- | ---------------------------- | -------- |
-|生成多语言自述文件 | `auto-translate-readmes.run` | _不适用_ |
+| Generate Multilingual READMEs | `auto-translate-readmes.run` | _N/A_    |
 
 ---
 
 ## 🧠 示例
 
-**Before:**
+**前：**
 
 ```md
 # My Awesome Extension
@@ -78,7 +78,7 @@ Visual Studio Code 扩展可使用 **free Google Translate API** 自动生成多
 A simple extension to help developers write better code.
 ```
 
-**After (Translated):**
+**之后（翻译）：**
 
 ```md
 # My Awesome Extension
@@ -104,13 +104,13 @@ Une extension Visual Studio Code qui aide les développeurs à mieux écrire du 
 
 ## 🛠️ 发展
 
-编译打字稿：
+编译TypeScript：
 
 ```bash
 npm run compile
 ```
 
-皮棉代码：
+Lint 代码：
 
 ```bash
 npm run lint
@@ -129,7 +129,7 @@ npm test
 1. 分叉存储库。
 2. 运行 `npm install` 安装依赖项。
 3. 做出改变。
-4. 编译 TypeScript：`npm run compile`。
+4. 编译TypeScript：`npm run compile`。
 5. 在 VS Code 中测试（按 **F5** → 扩展开发主机）。
 6. 提交拉取请求。
 
@@ -137,10 +137,10 @@ npm test
 
 ## 🐞 错误和问题
 
-报告 [GitHub Issues page](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/issues) 上的问题。
+在 [GitHub 问题页面](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/issues). 报告问题
 
 ---
 
 ## 🧾 许可证
 
-我的许可证 © [Fatony Ahmad Fauzi](../../LICENSE)
+MIT License © [法托尼·艾哈迈德·福齐](../../LICENSE)

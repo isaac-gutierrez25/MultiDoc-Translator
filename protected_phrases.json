@@ -1,0 +1,10 @@
+{
+  "protected_phrases": [
+    "MIT\\s+License(?:\\s*©)?(?:\\s*\\d{4})?",
+    "https?:\\/\\/\\S+",
+    "\\(LICENSE\\)",
+    "\\(\\.\\./\\.\\./LICENSE\\)",
+    "TypeScript",
+    "Lint"
+  ]
+}
