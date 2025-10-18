@@ -31,8 +31,8 @@
 
 ## ✅ サポートされている VS コードのバージョン
 
-- 最小バージョン: **1.85.0**
-- **Windows**、**macOS**、**Linux** でテスト済み。
+- 最小バージョン : **1.85.0**
+- **Windows**、**macOS**、および **Linux** でテスト済み。
 
 ---
 
@@ -137,7 +137,7 @@ npm test
 
 ## 🐞 バグと問題
 
-[GitHub の問題ページ](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/issues).) で問題を報告してください。
+[GitHub の問題ページ](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/issues). で問題を報告してください。
 
 ---
 

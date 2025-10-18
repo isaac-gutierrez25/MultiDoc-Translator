@@ -31,7 +31,7 @@ Extension Visual Studio Code qui génère automatiquement des fichiers `README.m
 
 ## ✅ Versions de code VS prises en charge
 
--Version minimale : **1.85.0**
+- Version minimale : **1.85.0**
 - Testé sur **Windows**, **macOS** et **Linux**.
 
 ---
@@ -47,7 +47,7 @@ Extension Visual Studio Code qui génère automatiquement des fichiers `README.m
 
 ### Pour le développement (à partir du code source)
 
-1. Clonez ce référentiel :
+1. Clonez ce référentiel :
     ```bash
     git clone [https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes.git](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes.git)
     cd Auto-Translate-Readmes
@@ -78,7 +78,7 @@ Extension Visual Studio Code qui génère automatiquement des fichiers `README.m
 A simple extension to help developers write better code.
 ```
 
-**Après (traduit) :**
+**Après (traduit) :**
 
 ```md
 # My Awesome Extension
@@ -94,7 +94,7 @@ Une extension Visual Studio Code qui aide les développeurs à mieux écrire du 
 
 ## 🧠 Interface de la barre latérale
 
-La barre latérale vous permet de :
+La barre latérale vous permet de :
 
 - 🗝️ Entrez et enregistrez votre propre clé API (facultatif)
 - ⚙️ Cliquez sur un seul bouton pour générer tous les fichiers README traduits
@@ -104,19 +104,19 @@ La barre latérale vous permet de :
 
 ## 🛠️ Développement
 
-Compilez TypeScript :
+Compilez TypeScript :
 
 ```bash
 npm run compile
 ```
 
-Code Lint :
+Code Lint :
 
 ```bash
 npm run lint
 ```
 
-Exécutez des tests :
+Exécutez des tests :
 
 ```bash
 npm test
@@ -129,7 +129,7 @@ npm test
 1. Forkez le référentiel.
 2. Exécutez `npm install` pour installer les dépendances.
 3. Effectuez vos modifications.
-4. Compilez TypeScript : `npm run compile`.
+4. Compilez TypeScript : `npm run compile`.
 5. Testez dans VS Code (appuyez sur **F5** → Extension Development Host).
 6. Soumettez une demande de tirage.
 

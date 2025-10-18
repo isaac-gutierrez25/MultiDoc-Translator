@@ -32,7 +32,7 @@ Visual Studio Code 扩展使用**免费的 Google Translate API** 自动生成�
 ## ✅ 支持的 VS Code 版本
 
 - 最低版本：**1.85.0**
-- 在 **Windows**、**macOS** 和 **Linux** 上测试。
+- 在 **Windows**、**macOS** 和 **Linux** 上进行测试。
 
 ---
 

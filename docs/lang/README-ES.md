@@ -23,7 +23,7 @@ Extensión de Visual Studio Code que genera automáticamente archivos `README.md
 - 🌍 Traducir automáticamente `README.md` a **más de 10 idiomas**.
 - 🔒 Protege bloques de código, código en línea y URL para que no se traduzcan.
 - 💬 Agrega un bloque de cambio de idioma (`🌐 Available in other languages: [Bahasa Indonesia](docs/lang/README-ID.md)`)
-- 💾 Permite **entrada de clave API personalizada** opcional (por ejemplo, Google Cloud, DeepL).
+- 💾 Permite **entrada de clave API personalizada** opcional (p. ej., Google Cloud, DeepL).
 - 🧠 Utiliza el Traductor de Google integrado (no se necesita cuenta).
 - ⚙️ Interfaz de barra lateral sencilla con 1 clic.
 
@@ -31,7 +31,7 @@ Extensión de Visual Studio Code que genera automáticamente archivos `README.md
 
 ## ✅ Versiones de código VS compatibles
 
-- Versión mínima: **1.85.0**
+- Versión mínima : **1.85.0**
 - Probado en **Windows**, **macOS** y **Linux**.
 
 ---

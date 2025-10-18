@@ -31,7 +31,7 @@ Extensão do Visual Studio Code que gera automaticamente arquivos `README.md` mu
 
 ## ✅ Versões de código VS suportadas
 
-- Versão mínima: **1.85.0**
+- Versão mínima : **1.85.0**
 - Testado em **Windows**, **macOS** e **Linux**.
 
 ---
@@ -62,7 +62,7 @@ Extensão do Visual Studio Code que gera automaticamente arquivos `README.md` mu
 
 ## ⌨️ Comandos e atalhos
 
-| Nome do Comando | ID do comando | Atalho |
+| Nome do comando | ID do comando | Atalho |
 | ----------------------------- | ---------------------------- | -------- |
 | Generate Multilingual READMEs | `auto-translate-readmes.run` | _N/A_    |
 

@@ -31,7 +31,7 @@ Ekstensi Visual Studio Code yang secara otomatis menghasilkan file `README.md` m
 
 ## ✅ Versi VS Code yang Didukung
 
-- Versi minimum: **1.85.0**
+- Versi minimum : **1.85.0**
 - Diuji pada **Windows**, **macOS**, dan **Linux**.
 
 ---

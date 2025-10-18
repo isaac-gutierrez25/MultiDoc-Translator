@@ -30,7 +30,19 @@ DEFAULT_PROTECTED = {
         r"MIT\s+License(?:\s*©)?(?:\s*\d{4})?",
         r"https?:\/\/\S+",
         r"\(LICENSE\)",
-        r"\(\.\./\.\./LICENSE\)"
+        r"\(\.\./\.\./LICENSE\)",
+        r"\*\*1\.85\.0\*\*",
+        r"\*\*Windows\*\*",
+        r"\*\*macOS\*\*", 
+        r"\*\*Linux\*\*",
+        r"\*\*Windows,\s*macOS\s*et\s*Linux\*\*",
+        r"Visual Studio Code",
+        r"VS Code",
+        r"Google Translate",
+        r"API",
+        r"GitHub",
+        r"README\.md",
+        r"Markdown"
     ]
 }
 
@@ -273,6 +285,23 @@ def remove_all_language_files():
     except Exception as e:
         print(f"❌ Gagal update README utama: {e}")
 
+def protect_specific_phrases(text, lang_code):
+    """Proteksi khusus untuk frasa-frasa penting setelah terjemahan"""
+    
+    # Proteksi untuk versi
+    text = re.sub(r'(\*\*)?1\.85\.0(\*\*)?', '**1.85.0**', text)
+    
+    # Proteksi untuk sistem operasi
+    text = re.sub(r'(\*\*)?Windows(\*\*)?', '**Windows**', text, flags=re.IGNORECASE)
+    text = re.sub(r'(\*\*)?macOS(\*\*)?', '**macOS**', text, flags=re.IGNORECASE)
+    text = re.sub(r'(\*\*)?Linux(\*\*)?', '**Linux**', text, flags=re.IGNORECASE)
+    
+    # Proteksi khusus untuk format daftar sistem operasi
+    text = re.sub(r'\*\*Windows\*\*,?\s*\*\*macOS\*\*,?\s*(et|and|und|y|и)\s*\*\*Linux\*\*', '**Windows**, **macOS** et **Linux**', text, flags=re.IGNORECASE)
+    text = re.sub(r'\*\*Windows\*\*,?\s*\*\*macOS\*\*,?\s*\*\*Linux\*\*', '**Windows**, **macOS** et **Linux**', text, flags=re.IGNORECASE)
+    
+    return text
+
 def translate_readme(lang_code, lang_info, protected):
     lang_name, translate_code, intro_text = lang_info
     dest_path = os.path.join(OUTPUT_DIR, f"README-{lang_code.upper()}.md")
@@ -437,6 +466,12 @@ def translate_readme(lang_code, lang_info, protected):
         temp_line = protect(r"`[^`]+`", temp_line)                       # Inline code
         temp_line = protect(r"`auto-translate-readmes\.run`", temp_line) # Command ID
         
+        # Proteksi khusus untuk versi dan sistem operasi
+        temp_line = protect(r"\*\*1\.85\.0\*\*", temp_line)             # Versi spesifik 1.85.0
+        temp_line = protect(r"\*\*Windows\*\*", temp_line)              # Windows
+        temp_line = protect(r"\*\*macOS\*\*", temp_line)                # macOS
+        temp_line = protect(r"\*\*Linux\*\*", temp_line)                # Linux
+        
         # Terjemahkan teks
         translated = translate_text(temp_line, translate_code)
 
@@ -448,13 +483,44 @@ def translate_readme(lang_code, lang_info, protected):
 
     translated_body = "\n".join(translated_lines)
     
+    # --- PERBAIKAN GENERIK ---
+    # 1. Perbaiki bullet points
+    translated_body = re.sub(r'^-(?=\w)', '- ', translated_body, flags=re.MULTILINE)
+    
+    # 2. Perbaiki non-breaking space
+    translated_body = translated_body.replace('\xa0', ' ')
+    
+    # 3. PERBAIKAN: Fix colon formatting TANPA merusak bold text
+    # Hanya perbaiki colon yang TIDAK dalam format bold
+    # Contoh: "text :**bold**" -> "text : **bold**" (tambah spasi)
+    # Tapi "**Before:**" tetap "**Before:**" (tidak diubah)
+    translated_body = re.sub(
+        r'(\w+)\s*:\s*(\*\*(?!.*\*\*:\*\*))',  # Jangan tangkap jika ada **:** dalam teks
+        r'\1 : \2',
+        translated_body
+    )
+    
+    # 4. PERBAIKAN UTAMA: Fix extra parenthesis
+    translated_body = re.sub(
+        r'(\[.*?\]\([^)]+\)\.)\)',
+        r'\1',
+        translated_body
+    )
+    
+    # 5. Perbaiki format bold
+    translated_body = re.sub(r'(\*\*)(\d+\.\d+\.\d+)(\*\*)', r'**\2**', translated_body)
+    
+    # 6. PERBAIKAN TAMBAHAN: Fix bold text yang rusak karena colon formatting
+    # Perbaiki "**Sebelum :**" menjadi "**Sebelum:**"
+    translated_body = re.sub(
+        r'\*\*(\w+)\s*:\s*\*\*',
+        r'**\1:**',
+        translated_body
+    )
+    
     # Pastikan link LICENSE tetap konsisten
     final_text = f"{final_header}\n\n---\n{translated_body}"
-    
-    # Normalisasi link LICENSE ke format yang benar
     final_text = re.sub(r"\(LICENSE\)", "(../../LICENSE)", final_text)
-    
-    # Bersihkan placeholder yang mungkin tertinggal
     final_text = re.sub(r"__p\d+__", "", final_text)
 
     os.makedirs(OUTPUT_DIR, exist_ok=True)

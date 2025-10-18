@@ -31,7 +31,7 @@ Rozszerzenie Visual Studio Code, które automatycznie generuje wielojęzyczne pl
 
 ## ✅ Obsługiwane wersje kodu VS
 
-- Wersja minimalna: **1.85.0**
+- Minimalna wersja : **1.85.0**
 - Testowano na **Windows**, **macOS** i **Linux**.
 
 ---

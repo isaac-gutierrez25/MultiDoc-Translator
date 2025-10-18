@@ -31,8 +31,8 @@ Visual Studio Code-Erweiterung, die mithilfe der **kostenlosen Google Translate-
 
 ## ✅ Unterstützte VS-Codeversionen
 
-- Mindestversion: **1.85.0**
-- Getestet unter **Windows**, **macOS** und **Linux**.
+- Mindestversion : **1.85.0**
+- Getestet auf **Windows**, **macOS** und **Linux**.
 
 ---
 
