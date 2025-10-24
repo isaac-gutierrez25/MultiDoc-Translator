@@ -1,64 +1,146 @@
 {
-  "name": "auto-translate-readmes",
-  "displayName": "Auto Translate Readmes",
-  "description": "Generate multilingual README files automatically inside VS Code — now powered by free Google Translate API (no key required).",
-  "version": "1.1.0",
+  "name": "multidoc-translator",
+  "displayName": "%displayName%",
+  "description": "%description%",
+  "version": "2.0.1",
   "publisher": "fatonyahmadfauzi",
   "engines": {
     "vscode": "^1.85.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes.git"
+    "url": "https://github.com/fatonyahmadfauzi/MultiDoc-Translator.git"
   },
   "categories": [
+    "Documentation",
     "Other"
   ],
-  "activationEvents": [
-    "onView:autoTranslateView",
-    "onCommand:auto-translate-readmes.run"
+  "keywords": [
+    "translation",
+    "multilingual",
+    "documentation",
+    "readme",
+    "changelog",
+    "i18n",
+    "localization"
   ],
-  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onView:multiDocTranslatorView",
+    "onCommand:multi-doc-translator.run"
+  ],
+  "type": "commonjs",
+  "main": "./out/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p .",
+    "watch": "tsc -watch -p .",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test",
+    "package": "vsce package",
+    "test-localization": "node ./scripts/test-localization.js"
+  },
   "contributes": {
     "commands": [
       {
-        "command": "auto-translate-readmes.run",
-        "title": "Generate Multilingual READMEs"
+        "command": "multi-doc-translator.run",
+        "title": "%multi-doc-translator.run.title%",
+        "category": "%commands.category%"
+      },
+      {
+        "command": "multi-doc-translator.removeSelected",
+        "title": "%multi-doc-translator.removeSelected.title%",
+        "category": "%commands.category%"
+      },
+      {
+        "command": "multi-doc-translator.removeAll",
+        "title": "%multi-doc-translator.removeAll.title%",
+        "category": "%commands.category%"
+      },
+      {
+        "command": "multi-doc-translator.addProtect",
+        "title": "%multi-doc-translator.addProtect.title%",
+        "category": "%commands.category%"
+      },
+      {
+        "command": "multi-doc-translator.removeProtect",
+        "title": "%multi-doc-translator.removeProtect.title%",
+        "category": "%commands.category%"
+      },
+      {
+        "command": "multi-doc-translator.listProtect",
+        "title": "%multi-doc-translator.listProtect.title%",
+        "category": "%commands.category%"
+      },
+      {
+        "command": "multi-doc-translator.initProtect",
+        "title": "%multi-doc-translator.initProtect.title%",
+        "category": "%commands.category%"
+      },
+      {
+        "command": "multi-doc-translator.enableProtect",
+        "title": "%multi-doc-translator.enableProtect.title%",
+        "category": "%commands.category%"
+      },
+      {
+        "command": "multi-doc-translator.disableProtect",
+        "title": "%multi-doc-translator.disableProtect.title%",
+        "category": "%commands.category%"
+      },
+      {
+        "command": "multi-doc-translator.statusProtect",
+        "title": "%multi-doc-translator.statusProtect.title%",
+        "category": "%commands.category%"
+      },
+      {
+        "command": "multi-doc-translator.showProgress",
+        "title": "%multi-doc-translator.showProgress.title%",
+        "category": "%commands.category%"
+      },
+      {
+        "command": "multi-doc-translator.autoSetupChangelog",
+        "title": "%multi-doc-translator.autoSetupChangelog.title%",
+        "category": "%commands.category%"
+      },
+      {
+        "command": "multi-doc-translator.translateChangelog",
+        "title": "%multi-doc-translator.translateChangelog.title%",
+        "category": "%commands.category%"
+      },
+      {
+        "command": "multi-doc-translator.detectGitHubUrl",
+        "title": "%multi-doc-translator.detectGitHubUrl.title%",
+        "category": "%commands.category%"
       }
     ],
     "viewsContainers": {
       "activitybar": [
         {
-          "id": "autoTranslateContainer",
-          "title": "Translate",
+          "id": "multiDocTranslatorContainer",
+          "title": "MultiDoc Translator",
           "icon": "images/sidebar.svg"
         }
       ]
     },
     "views": {
-      "autoTranslateContainer": [
+      "multiDocTranslatorContainer": [
         {
-          "id": "autoTranslateView",
-          "name": "Auto Translate"
+          "id": "multiDocTranslatorView",
+          "name": "MultiDoc Translator",
+          "type": "webview"
         }
       ]
     },
-    "viewsWelcome": [
-      {
-        "view": "autoTranslateView",
-        "contents": "🌍 **Auto Translate Readmes**\n\nEasily generate multilingual README files inside VS Code using free Google Translate API.\n\n[⚙️ Generate Now](command:auto-translate-readmes.run)"
-      }
-    ],
     "configuration": {
       "type": "object",
-      "title": "Auto Translate Readmes Settings",
+      "title": "%configuration.title%",
       "properties": {
-        "autoTranslateReadmes.skipExisting": {
+        "MultiDocTranslator.skipExisting": {
           "type": "boolean",
           "default": false,
-          "description": "If true, skip generating translation files that already exist."
+          "description": "%configuration.properties.MultiDocTranslator.skipExisting.description%",
+          "title": "%configuration.properties.MultiDocTranslator.skipExisting.title%"
         },
-        "autoTranslateReadmes.languages": {
+        "MultiDocTranslator.languages": {
           "type": "array",
           "default": [
             "id",
@@ -70,37 +152,185 @@
             "pl",
             "ru",
             "pt",
-            "ko"
+            "kr"
           ],
-          "description": "List of target languages to generate README translations for."
+          "description": "%configuration.properties.MultiDocTranslator.languages.description%",
+          "title": "%configuration.properties.MultiDocTranslator.languages.title%"
         },
-        "autoTranslateReadmes.apiKey": {
+        "MultiDocTranslator.apiKey": {
           "type": "string",
           "default": "",
-          "description": "Optional custom API key for translation service (e.g., Google Cloud, DeepL). Leave blank to use free Google Translate API."
+          "description": "%configuration.properties.MultiDocTranslator.apiKey.description%",
+          "title": "%configuration.properties.MultiDocTranslator.apiKey.title%"
+        },
+        "MultiDocTranslator.enableProtection": {
+          "type": "boolean",
+          "default": true,
+          "description": "%configuration.properties.MultiDocTranslator.enableProtection.description%",
+          "title": "%configuration.properties.MultiDocTranslator.enableProtection.title%"
+        },
+        "MultiDocTranslator.autoChangelog": {
+          "type": "boolean",
+          "default": true,
+          "description": "%configuration.properties.MultiDocTranslator.autoChangelog.description%",
+          "title": "%configuration.properties.MultiDocTranslator.autoChangelog.title%"
+        },
+        "MultiDocTranslator.translationDelay": {
+          "type": "number",
+          "default": 1000,
+          "minimum": 500,
+          "maximum": 5000,
+          "description": "%configuration.properties.MultiDocTranslator.translationDelay.description%",
+          "title": "%configuration.properties.MultiDocTranslator.translationDelay.title%"
+        },
+        "MultiDocTranslator.defaultLanguage": {
+          "type": "string",
+          "default": "en",
+          "description": "%configuration.properties.MultiDocTranslator.defaultLanguage.description%",
+          "title": "%configuration.properties.MultiDocTranslator.defaultLanguage.title%"
+        },
+        "MultiDocTranslator.protectionEnabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "%configuration.properties.MultiDocTranslator.protectionEnabled.description%",
+          "title": "%configuration.properties.MultiDocTranslator.protectionEnabled.title%"
+        },
+        "MultiDocTranslator.autoDetectGitHub": {
+          "type": "boolean",
+          "default": true,
+          "description": "%configuration.properties.MultiDocTranslator.autoDetectGitHub.description%",
+          "title": "%configuration.properties.MultiDocTranslator.autoDetectGitHub.title%"
+        },
+        "MultiDocTranslator.outputDirectory": {
+          "type": "string",
+          "default": "docs/lang",
+          "description": "%configuration.properties.MultiDocTranslator.outputDirectory.description%",
+          "title": "%configuration.properties.MultiDocTranslator.outputDirectory.title%"
         }
       }
-    }
+    },
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "multi-doc-translator.run",
+          "title": "%menus.commandPalette.multi-doc-translator.run.title%",
+          "when": "true"
+        },
+        {
+          "command": "multi-doc-translator.removeSelected",
+          "title": "%menus.commandPalette.multi-doc-translator.removeSelected.title%",
+          "when": "true"
+        },
+        {
+          "command": "multi-doc-translator.removeAll",
+          "title": "%menus.commandPalette.multi-doc-translator.removeAll.title%",
+          "when": "true"
+        },
+        {
+          "command": "multi-doc-translator.addProtect",
+          "title": "%menus.commandPalette.multi-doc-translator.addProtect.title%",
+          "when": "true"
+        },
+        {
+          "command": "multi-doc-translator.removeProtect",
+          "title": "%menus.commandPalette.multi-doc-translator.removeProtect.title%",
+          "when": "true"
+        },
+        {
+          "command": "multi-doc-translator.listProtect",
+          "title": "%menus.commandPalette.multi-doc-translator.listProtect.title%",
+          "when": "true"
+        },
+        {
+          "command": "multi-doc-translator.initProtect",
+          "title": "%menus.commandPalette.multi-doc-translator.initProtect.title%",
+          "when": "true"
+        },
+        {
+          "command": "multi-doc-translator.enableProtect",
+          "title": "%menus.commandPalette.multi-doc-translator.enableProtect.title%",
+          "when": "true"
+        },
+        {
+          "command": "multi-doc-translator.disableProtect",
+          "title": "%menus.commandPalette.multi-doc-translator.disableProtect.title%",
+          "when": "true"
+        },
+        {
+          "command": "multi-doc-translator.statusProtect",
+          "title": "%menus.commandPalette.multi-doc-translator.statusProtect.title%",
+          "when": "true"
+        },
+        {
+          "command": "multi-doc-translator.showProgress",
+          "title": "%menus.commandPalette.multi-doc-translator.showProgress.title%",
+          "when": "true"
+        },
+        {
+          "command": "multi-doc-translator.autoSetupChangelog",
+          "title": "%menus.commandPalette.multi-doc-translator.autoSetupChangelog.title%",
+          "when": "true"
+        },
+        {
+          "command": "multi-doc-translator.translateChangelog",
+          "title": "%menus.commandPalette.multi-doc-translator.translateChangelog.title%",
+          "when": "true"
+        },
+        {
+          "command": "multi-doc-translator.detectGitHubUrl",
+          "title": "%menus.commandPalette.multi-doc-translator.detectGitHubUrl.title%",
+          "when": "true"
+        }
+      ],
+      "view/title": [
+        {
+          "command": "multi-doc-translator.run",
+          "when": "view == multiDocTranslatorView",
+          "group": "navigation"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "multiDocTranslatorView",
+        "contents": {
+          "title": "%viewsWelcome.multiDocTranslatorView.welcome.title%",
+          "description": "%viewsWelcome.multiDocTranslatorView.welcome.description%"
+        }
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "multi-doc-translator.run",
+        "key": "ctrl+alt+p",
+        "mac": "cmd+alt+p",
+        "when": "editorTextFocus",
+        "title": "%keybindings.multi-doc-translator.run.title%",
+        "description": "%keybindings.multi-doc-translator.run.description%"
+      }
+    ]
   },
   "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#0078D4",
+    "theme": "dark"
+  },
   "bugs": {
-    "url": "https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/issues"
+    "url": "https://github.com/fatonyahmadfauzi/MultiDoc-Translator/issues"
   },
-  "homepage": "https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes#readme",
-  "scripts": {
-    "vscode:prepublish": "node ./esbuild.js",
-    "compile": "node ./esbuild.js",
-    "lint": "eslint src --ext ts",
-    "test": "vscode-test"
-  },
+  "homepage": "https://github.com/fatonyahmadfauzi/MultiDoc-Translator#readme",
+  "license": "MIT",
   "devDependencies": {
     "@types/mocha": "^10.0.10",
-    "@types/node": "22.x",
+    "@types/node": "^22.18.12",
     "@types/node-fetch": "^2.6.13",
     "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^8.37.0",
+    "@typescript-eslint/parser": "^8.37.0",
     "esbuild": "^0.25.11",
     "eslint": "^9.36.0",
     "node-fetch": "^2.7.0",
     "typescript": "^5.9.3"
-  }
+  },
+  "l10n": "./l10n"
 }
