@@ -30,15 +30,16 @@
   ],
   "type": "commonjs",
   "main": "./out/extension.js",
-  "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p .",
-    "watch": "tsc -watch -p .",
-    "lint": "eslint src --ext ts",
-    "test": "vscode-test",
-    "package": "vsce package",
-    "test-localization": "node ./scripts/test-localization.js"
-  },
+"scripts": {
+   "vscode:prepublish": "npm run compile",
+   "compile": "tsc -p ./ && npm run copy-assets",
+   "copy-assets": "cpx \"./l10n/**/*.json\" ./out/l10n && cpx \"./package.nls/**/*.json\" ./out/package.nls",
+   "watch": "tsc -watch -p .",
+   "lint": "eslint src --ext ts",
+   "test": "vscode-test",
+   "package": "vsce package",
+   "test-localization": "node ./scripts/test-localization.js"
+ },
   "contributes": {
     "commands": [
       {
@@ -327,6 +328,7 @@
     "@types/vscode": "^1.85.0",
     "@typescript-eslint/eslint-plugin": "^8.37.0",
     "@typescript-eslint/parser": "^8.37.0",
+    "cpx": "^1.5.0",
     "esbuild": "^0.25.11",
     "eslint": "^9.36.0",
     "node-fetch": "^2.7.0",
