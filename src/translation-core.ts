@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as vscode from 'vscode';
 import fetch from 'node-fetch';
-import { LANGUAGES, getL10n } from './l10n'; // ✅ IMPORT LANGUAGES DAN L10N
+import { LANGUAGES, getL10n } from './l10n'; // ✅ Impor getL10n juga
 
 // Constants
 export const SOURCE_FILE = "README.md";
@@ -833,7 +833,7 @@ export function removeAllLanguageFiles(workspace: string): string[] {
     return allRemovedLangs;
 }
 
-// 🔄 PERBAIKAN BESAR: Update language switcher dengan urutan sesuai Python
+// 🔄 PERBAIKAN BESAR: Update language switcher dengan urutan custom
 export function updateLanguageSwitcher(workspace: string, newLanguages?: string[], removedLanguages?: string[]): void {
     const sourceFile = path.join(workspace, SOURCE_FILE);
     const outputDir = path.join(workspace, OUTPUT_DIR);
@@ -842,9 +842,13 @@ export function updateLanguageSwitcher(workspace: string, newLanguages?: string[
         return;
     }
 
+    // Pindahkan definisi variabel ke scope yang lebih tinggi
+    const customLanguageOrder = ['pl', 'zh', 'jp', 'de', 'fr', 'es', 'ru', 'pt', 'id', 'kr'];
+    let existingLangs: string[] = [];
+    
     try {
         // Dapatkan semua bahasa yang sudah ada
-        const existingLangs = getExistingTranslatedLanguages(workspace);
+        existingLangs = getExistingTranslatedLanguages(workspace);
 
         // Jika ada bahasa baru, tambahkan ke daftar existing
         if (newLanguages) {
@@ -865,15 +869,14 @@ export function updateLanguageSwitcher(workspace: string, newLanguages?: string[
             }
         }
 
-        // PERBAIKAN: Urutkan bahasa sesuai urutan di LANGUAGES (seperti Python)
-        const sortedExistingLangs = Object.keys(LANGUAGES).filter(code => 
-            existingLangs.includes(code) && code !== 'en' // Filter out English
+        const sortedExistingLangs = customLanguageOrder.filter(code => 
+            existingLangs.includes(code) && code !== 'en'
         );
 
         // PERBAIKAN: Update README utama (English) dengan spacing yang benar
         let content = fs.readFileSync(sourceFile, "utf-8");
 
-        // Buat daftar link untuk README utama - URUTAN SESUAI PYTHON
+        // Buat daftar link untuk README utama - URUTAN CUSTOM
         const langLinks: string[] = [];
         for (const code of sortedExistingLangs) {
             if (code in LANGUAGES) {
@@ -939,7 +942,15 @@ export function updateLanguageSwitcher(workspace: string, newLanguages?: string[
                 /> 🌐 Available in other languages:[^\n]*(\n|$)/g,
                 /> 🌐 Tersedia dalam bahasa lain:[^\n]*(\n|$)/g,
                 /> 🌐 Disponible dans d'autres langues:[^\n]*(\n|$)/g,
-                /> 🌐 Disponible dans d'autres langues :[^\n]*(\n|$)/g
+                /> 🌐 Disponible dans d'autres langues :[^\n]*(\n|$)/g,
+                /> 🌐 In anderen Sprachen verfügbar:[^\n]*(\n|$)/g,
+                /> 🌐 他の言語でも利用可能:[^\n]*(\n|$)/g,
+                /> 🌐 提供其他语言版本：[^\n]*(\n|$)/g,
+                /> 🌐 Disponible en otros idiomas:[^\n]*(\n|$)/g,
+                /> 🌐 Dostępne w innych językach:[^\n]*(\n|$)/g,
+                /> 🌐 Доступно на他の言語で:[^\n]*(\n|$)/g,
+                /> 🌐 Disponível em outros idiomas:[^\n]*(\n|$)/g,
+                /> 🌐 다른 언어로도 사용 가능:[^\n]*(\n|$)/g
             ];
             
             for (const pattern of switcherPatterns) {
@@ -956,8 +967,9 @@ export function updateLanguageSwitcher(workspace: string, newLanguages?: string[
         Logger.error('Failed to update language switcher in main README', error);
     }
 
-    // PERBAIKAN KHUSUS: Update semua README yang sudah diterjemahkan dengan spacing yang benar dan tanpa duplikasi
-    for (const langCode of getExistingTranslatedLanguages(workspace)) {
+    // PERBAIKAN KHUSUS: Update semua README yang sudah diterjemahkan dengan urutan custom
+    // Gunakan existingLangs yang sudah didefinisikan di atas
+    for (const langCode of existingLangs) {
         if (langCode in LANGUAGES) {
             const [langName, , introText] = LANGUAGES[langCode];
             const readmePath = path.join(outputDir, `README-${langCode.toUpperCase()}.md`);
@@ -966,11 +978,13 @@ export function updateLanguageSwitcher(workspace: string, newLanguages?: string[
                 try {
                     let content = fs.readFileSync(readmePath, "utf-8");
                     
-                    // PERBAIKAN: Buat daftar link untuk bahasa ini dengan urutan sesuai Python
-                    // English selalu pertama, lalu bahasa lain sesuai urutan LANGUAGES
+                    // PERBAIKAN: Buat daftar link untuk bahasa ini dengan URUTAN CUSTOM
+                    // English selalu pertama, lalu bahasa lain sesuai urutan custom
                     const links = ["[English](../../README.md)"];
-                    for (const code of getExistingTranslatedLanguages(workspace)) {
-                        if (code !== langCode) {
+                    
+                    // Gunakan urutan custom untuk bahasa lainnya
+                    for (const code of customLanguageOrder) {
+                        if (existingLangs.includes(code) && code !== langCode) {
                             const name = LANGUAGES[code][0];
                             links.push(`[${name}](README-${code.toUpperCase()}.md)`);
                         }
@@ -980,7 +994,6 @@ export function updateLanguageSwitcher(workspace: string, newLanguages?: string[
                     const newSwitcherLine = `> ${introText} ${linksText}`;
                     
                     // PERBAIKAN KHUSUS: Hapus SEMUA language switcher yang sudah ada untuk bahasa ini
-                    // Termasuk semua variasi yang mungkin
                     const switcherPatterns = [
                         /> 🌐 Available in other languages:[^\n]*(\n|$)/g,
                         /> 🌐 Tersedia dalam bahasa lain:[^\n]*(\n|$)/g,
@@ -1166,19 +1179,11 @@ export async function translateChangelog(
                 "### Deprecated": "### Usang",
                 "### Breaking Changes": "### Perubahan Besar"
             },
-            // Korean headers (both ko and kr codes)
-            ko: {
+            // HAPUS "ko", GUNAKAN "kr" SAJA:
+            "kr": {
                 "### Added": "### 추가됨",
                 "### Changed": "### 변경됨",
-                "### Fixed": "### 수정됨",
-                "### Removed": "### 제거됨",
-                "### Deprecated": "### 더 이상 사용되지 않음",
-                "### Breaking Changes": "### 주요 변경 사항"
-            },
-            kr: {
-                "### Added": "### 추가됨",
-                "### Changed": "### 변경됨",
-                "### Fixed": "### 수정됨",
+                "### Fixed": "### 수정됨", 
                 "### Removed": "### 제거됨",
                 "### Deprecated": "### 더 이상 사용되지 않음",
                 "### Breaking Changes": "### 주요 변경 사항"
@@ -1382,48 +1387,54 @@ export async function updateChangelogLinksInReadme(
 
 // 🔄 NEW: Translate CHANGELOG only function
 export async function translateChangelogOnly(
-    langCodes: string[], 
-    workspace: string, 
+    langCodes: string[],
+    workspace: string,
     progressOutput?: vscode.OutputChannel
 ): Promise<boolean> {
+    // ====> PASTIKAN INI ADA DI AWAL FUNGSI <====
+    const l10n = getL10n();
+    // ===========================================
+
     if (!hasChangelogFile(workspace)) {
         if (progressOutput) {
             progressOutput.appendLine('No CHANGELOG.md file found in workspace');
+            // Jika Anda ingin pesan ini dilokalisasi juga:
+            // progressOutput.appendLine(l10n.t('errors.noChangelogFile'));
         }
         return false;
     }
-    
+
     const protectedData = loadProtectedPhrases(workspace);
-    const l10n = getL10n();
-    
+
     let successCount = 0;
-    // Filter out English from language codes
     const filteredLangCodes = langCodes.filter(code => code !== 'en');
 
     for (const langCode of filteredLangCodes) {
         if (langCode in LANGUAGES) {
-    if (progressOutput) {
-        progressOutput.appendLine(l10n.t('progress.translatingTo', LANGUAGES[langCode][0], langCode.toUpperCase(), new Date().toLocaleTimeString()));
-    }            if (await translateChangelog(langCode, LANGUAGES[langCode], protectedData, workspace)) {
+            if (progressOutput) {
+                // ====> PERBAIKI PEMANGGILAN INI <====
+                progressOutput.appendLine(l10n.t('progress.translatingTo', LANGUAGES[langCode][0], langCode.toUpperCase(), new Date().toLocaleTimeString()));
+                // ===================================
+            }
+            if (await translateChangelog(langCode, LANGUAGES[langCode], protectedData, workspace)) {
                 successCount++;
-                
-                // Update links in README if it exists
                 await updateChangelogLinksInReadme(langCode, LANGUAGES[langCode], workspace);
             }
-            
-            // Delay untuk menghindari rate limiting
+
             await new Promise(resolve => setTimeout(resolve, 1000));
         }
     }
-    
+
     if (successCount > 0) {
         if (progressOutput) {
-            progressOutput.appendLine(l10n.t('changelog.translationComplete', successCount));
+            progressOutput.appendLine(l10n.t('changelog.translationComplete', successCount.toString())); // Ini sudah benar
         }
         return true;
     } else {
         if (progressOutput) {
+            // ====> PERBAIKI PEMANGGILAN INI <====
             progressOutput.appendLine(l10n.t('changelog.translationFailed'));
+            // ===================================
         }
         return false;
     }
@@ -1437,11 +1448,11 @@ export async function translateReadme(
     workspace: string,
     progressOutput?: vscode.OutputChannel
 ): Promise<void> {
+    const l10n = getL10n();
     const [langName, translateCode, introText] = langInfo;
     const srcPath = path.join(workspace, SOURCE_FILE);
     const outDir = path.join(workspace, OUTPUT_DIR);
     const destPath = path.join(outDir, `README-${langCode.toUpperCase()}.md`);
-    const l10n = getL10n();
 
     if (!fs.existsSync(srcPath)) {
         throw new Error("README.md not found");
@@ -1450,8 +1461,6 @@ export async function translateReadme(
     // Tampilkan progress mulai
     if (progressOutput) {
         const timestamp = new Date().toLocaleTimeString();
-        // Get the l10n instance
-        const l10n = getL10n();
         progressOutput.appendLine(l10n.t('progress.translatingTo', langName, langCode.toUpperCase(), timestamp));
     }
 
@@ -1486,7 +1495,8 @@ export async function translateReadme(
     const existingLangs = getExistingTranslatedLanguages(workspace);
     
     // PERBAIKAN: Urutkan bahasa sesuai urutan di LANGUAGES (seperti Python)
-    const sortedExistingLangs = Object.keys(LANGUAGES).filter(code => 
+    const customLanguageOrder = ['pl', 'zh', 'jp', 'de', 'fr', 'es', 'ru', 'pt', 'id', 'kr'];
+    const sortedExistingLangs = customLanguageOrder.filter(code => 
         existingLangs.includes(code)
     );
     
@@ -1521,9 +1531,9 @@ export async function translateReadme(
         
         // 10行ごとに進捗を更新
         if (progressOutput && processedLines % 10 === 0) {
-            const percent = Math.round((processedLines / totalLines) * 100);
-            progressOutput.appendLine(l10n.t('progress.lineProgress', processedLines, totalLines, percent));
-        }
+                const percent = Math.round((processedLines / totalLines) * 100);
+                progressOutput.appendLine(l10n.t('progress.lineProgress', processedLines.toString(), totalLines.toString(), percent.toString())); // Menggunakan l10n.t
+            }
         
         // コードブロックを検出
         if (line.trim().startsWith("```")) {
@@ -1711,8 +1721,8 @@ export async function translateReadme(
 
         // 進捗完了を表示
         if (progressOutput) {
-            progressOutput.appendLine(l10n.t('progress.fileCreated', destPath));
-        }
+                progressOutput.appendLine(l10n.t('progress.fileCreated', destPath)); // Menggunakan l10n.t
+            }
 
         // Setelah berhasil translate README, handle CHANGELOG
         if (hasChangelogFile(workspace) && hasChangelogSectionInReadme(workspace)) {

@@ -8,19 +8,22 @@ let l10n: ReturnType<typeof initL10n>;
 export function activate(context: vscode.ExtensionContext) {
     console.log('Activating MultiDoc Translator extension...');
     
-    // ✅ INISIALISASI L10N YANG BARU
+    // ✅ INISIALISASI L10N YANG DIPERBAIKI
     try {
         l10n = initL10n(context.extensionPath);
         
         // Set bahasa berdasarkan VS Code locale
         const vscodeLanguage = vscode.env.language;
+        console.log(`VS Code detected language: ${vscodeLanguage}`);
+        
         l10n.setLanguage(vscodeLanguage);
         
-        console.log(`MultiDoc Translator initialized with language: ${vscodeLanguage}`);
+        console.log(`MultiDoc Translator initialized with language: ${l10n.getCurrentLanguage()}`);
     } catch (error) {
         console.error('Failed to initialize l10n', error);
         // Fallback initialization
         l10n = initL10n(context.extensionPath);
+        l10n.setLanguage('en'); // Fallback ke English
     }
     
     const provider = new TranslateSidebarProvider(context.extensionUri, context);

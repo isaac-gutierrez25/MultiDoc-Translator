@@ -21,13 +21,12 @@ export const LANGUAGES: Record<string, [string, string, string]> = {
     "fr": ["Français", "fr", "🌐 Disponible dans d'autres langues :"],
     "de": ["Deutsch", "de", "🌐 In anderen Sprachen verfügbar:"],
     "jp": ["日本語", "ja", "🌐 他の言語でも利用可能:"],
-    "zh": ["简体中文", "zh-CN", "🌐 提供其他语言版本："],
+    "zh": ["中文", "zh-CN", "🌐 提供其他语言版本："],  // UBAH: "简体中文" → "中文"
     "es": ["Español", "es", "🌐 Disponible en otros idiomas:"],
     "pl": ["Polski", "pl", "🌐 Dostępne w innych językach:"],
     "ru": ["Русский", "ru", "🌐 Доступно на других языках:"],
     "pt": ["Português", "pt", "🌐 Disponível em outros idiomas:"],
-    "ko": ["한국어", "ko", "🌐 다른 언어로도 사용 가능:"],
-    "kr": ["한국어", "ko", "🌐 다른 언어로도 사용 가능:"],  // Alias for backward compatibility
+    "kr": ["한국어", "ko", "🌐 다른 언어로도 사용 가능:"],
 };
 
 // Interface untuk bundle l10n
@@ -177,32 +176,41 @@ export class L10nManager {
 
     // Normalize VS Code language code to match our bundle codes
     private normalizeLanguageCode(langCode: string): string {
+        console.log(`[L10n DEBUG] Normalizing language code: ${langCode}`);
+        
         const langMap: Record<string, string> = {
             'de': 'de',
-            'es': 'es',
+            'es': 'es', 
             'fr': 'fr',
             'id': 'id',
-            'ja': 'jp',      // Changed from 'ja' to 'jp'
-            'jp': 'jp',      // Added new mapping
-            'ko': 'kr',      // Changed from 'ko' to 'kr'
-            'kr': 'kr',      // Added new mapping
+            'ja': 'jp',    // VS Code Japanese code
+            'jp': 'jp',    // Our bundle code
+            'ko': 'kr',
+            'kr': 'kr',
             'pl': 'pl',
             'pt': 'pt',
             'pt-br': 'pt',
             'ru': 'ru',
-            'zh-cn': 'zh',   // Changed from 'zh-CN' to 'zh'
-            'zh-tw': 'zh',   // Changed from 'zh-CN' to 'zh'
-            'zh': 'zh'       // Changed from 'zh-CN' to 'zh'
+            'zh-cn': 'zh',
+            'zh-tw': 'zh',
+            'zh': 'zh'
         };
 
         const baseLang = langCode.toLowerCase().split('-')[0];
-        return langMap[baseLang] || langMap[langCode.toLowerCase()] || 'en';
+        console.log(`[L10n DEBUG] Base language: ${baseLang}`);
+        
+        const result = langMap[baseLang] || langMap[langCode.toLowerCase()] || 'en';
+        console.log(`[L10n DEBUG] Normalization result: ${result}`);
+        
+        return result;
     }
 
     // Memuat semua bundle l10n
     private loadBundles(): void {
         try {
             const l10nPath = path.join(this.extensionPath, 'l10n');
+            console.log(`[L10n DEBUG] Looking for l10n folder at: ${l10nPath}`);
+            console.log(`[L10n DEBUG] Folder exists: ${fs.existsSync(l10nPath)}`);
             
             if (!fs.existsSync(l10nPath)) {
                 L10nLogger.log('l10n directory not found, using fallback translations');
@@ -211,55 +219,65 @@ export class L10nManager {
             }
 
             const files = fs.readdirSync(l10nPath);
+            console.log(`[L10n DEBUG] Files in l10n folder: ${files.join(', ')}`);
+            
             let loadedCount = 0;
             
             for (const file of files) {
                 try {
+                    console.log(`[L10n DEBUG] Checking file: ${file}`);
                     // Pattern: bundle.l10n.[lang].json
                     if (file.startsWith('bundle.l10n.') && file.endsWith('.json')) {
                         const langCode = file.replace('bundle.l10n.', '').replace('.json', '');
+                        console.log(`[L10n DEBUG] Found bundle for language: ${langCode}`);
+                        
                         const filePath = path.join(l10nPath, file);
                         const content = fs.readFileSync(filePath, 'utf-8');
                         const bundle: L10nBundle = JSON.parse(content);
                         this.bundles.set(langCode, bundle);
                         loadedCount++;
-                        L10nLogger.log(`Loaded l10n bundle for ${langCode}`);
+                        console.log(`[L10n DEBUG] ✅ Successfully loaded bundle for ${langCode}`);
                     }
                 } catch (fileError) {
-                    L10nLogger.error(`Error loading bundle ${file}`, fileError);
+                    console.error(`[L10n DEBUG] ❌ Error loading bundle ${file}:`, fileError);
                 }
             }
+
+            console.log(`[L10n DEBUG] Total bundles loaded: ${loadedCount}`);
+            console.log(`[L10n DEBUG] Available languages: ${Array.from(this.bundles.keys()).join(', ')}`);
 
             // Always ensure English bundle exists as fallback
             if (!this.bundles.has('en')) {
                 this.bundles.set('en', FALLBACK_TRANSLATIONS);
-                L10nLogger.log('English fallback bundle loaded');
-            }
-
-            if (loadedCount === 0) {
-                L10nLogger.log('No l10n bundles found, using fallback translations only');
-            } else {
-                L10nLogger.log(`Successfully loaded ${loadedCount} l10n bundles`);
+                console.log('[L10n DEBUG] English fallback bundle loaded');
             }
 
         } catch (error) {
-            L10nLogger.error('Error loading l10n bundles', error);
-            // Ensure we always have English fallback
+            console.error('[L10n DEBUG] ❌ Error loading l10n bundles:', error);
             this.bundles.set('en', FALLBACK_TRANSLATIONS);
         }
     }
 
-    // Mengatur bahasa saat ini
     public setLanguage(langCode: string): void {
+        console.log(`[L10n DEBUG] ===== SET LANGUAGE PROCESS =====`);
+        console.log(`[L10n DEBUG] VS Code language: ${langCode}`);
+        
         const normalizedLang = this.normalizeLanguageCode(langCode);
+        console.log(`[L10n DEBUG] Normalized language: ${normalizedLang}`);
+        
+        console.log(`[L10n DEBUG] Available bundles: ${Array.from(this.bundles.keys()).join(', ')}`);
+        console.log(`[L10n DEBUG] Bundle for '${normalizedLang}' exists: ${this.bundles.has(normalizedLang)}`);
         
         if (this.bundles.has(normalizedLang)) {
             this.currentLanguage = normalizedLang;
-            L10nLogger.log(`Language set to: ${this.currentLanguage}`);
+            console.log(`[L10n DEBUG] ✅ SUCCESS: Language set to: ${this.currentLanguage}`);
         } else {
-            L10nLogger.log(`Language ${langCode} (normalized: ${normalizedLang}) not found, falling back to English`);
+            console.log(`[L10n DEBUG] ❌ FAILED: Language ${normalizedLang} not found, falling back to English`);
             this.currentLanguage = 'en';
         }
+        
+        console.log(`[L10n DEBUG] Final current language: ${this.currentLanguage}`);
+        console.log(`[L10n DEBUG] ===== END SET LANGUAGE =====`);
     }
 
     // Mendapatkan string yang dilokalisasi

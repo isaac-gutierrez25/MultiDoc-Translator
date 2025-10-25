@@ -7,7 +7,11 @@
   "progress.startingTranslation": "🚀 {0}개 언어 번역 시작...",
   "progress.translating": "🌍 README 번역 중",
   "progress.translatingLanguage": "📘 {0} 번역 중 ({1}/{2}) ...",
+  "progress.translatingTo": "📘 [{2}] {0} ({1}) 번역 중",
+  "progress.lineProgress": "   ↳ 진행률: {0}/{1} 줄 ({2}%)",
   "progress.waiting": "   ⏳ {0}초 대기 중...",
+  "progress.fileCreated": "✅ {0} 성공적으로 생성됨",
+  "progress.changelogTranslated": "✅ {0}의 변경 로그 번역됨",
   "progress.completed": "🎉 번역이 성공적으로 완료되었습니다!",
   "progress.filesSaved": "📁 파일 저장 위치: {0}",
   "progress.removingSelected": "🗑️ {0}개 선택 언어 제거 중...",
@@ -26,6 +30,8 @@
   "changelog.selectLanguages": "CHANGELOG를 번역할 언어 선택",
   "changelog.translateAll": "CHANGELOG를 모든 지원 언어로 번역",
   "changelog.translateSelected": "CHANGELOG를 {0}개 선택 언어로 번역",
+  "changelog.translating": "📘 {0}의 변경 로그 번역 중...",
+  "changelog.translationComplete": "✅ {0} 변경 로그 번역 완료",
   "protection.title": "🛡️ 구문 보호 설정",
   "protection.status": "보호 상태",
   "protection.active": "활성화 ✅",
@@ -98,9 +104,5 @@
   "github.sourcesChecked": "📋 확인된 소스:",
   "github.sourcePackageJson": "• package.json (repository 필드)",
   "github.sourceGitConfig": "• .git/config",
-  "github.sourceReadme": "• README.md (GitHub URL 패턴)",
-  "progress.translatingLanguage": "📘 {0} 번역 중 ({1}/{2}) ...", 
-  "progress.lineProgress": "   ↳ 진행률: {0}/{1} 줄 ({2}%)",
-  "progress.fileCreated": "✅ {0} 성공적으로 생성됨",
-  "progress.waiting": "   ⏳ {0}초 대기 중..."
+  "github.sourceReadme": "• README.md (GitHub URL 패턴)"
 }

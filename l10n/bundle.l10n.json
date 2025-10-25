@@ -7,7 +7,11 @@
   "progress.startingTranslation": "🚀 Starting translation for {0} languages...",
   "progress.translating": "🌍 Translating READMEs",
   "progress.translatingLanguage": "📘 Translating {0} ({1}/{2}) ...",
+  "progress.translatingTo": "📘 [{2}] Translating {0} ({1})",
+  "progress.lineProgress": "   ↳ Progress: {0}/{1} lines ({2}%)",
   "progress.waiting": "   ⏳ Waiting {0}s...",
+  "progress.fileCreated": "✅ {0} successfully created",
+  "progress.changelogTranslated": "✅ {0} changelog translated",
   "progress.completed": "🎉 Translation completed successfully!",
   "progress.filesSaved": "📁 Files saved in: {0}",
   "progress.removingSelected": "🗑️ Removing {0} selected languages...",
@@ -26,6 +30,8 @@
   "changelog.selectLanguages": "Select which languages to translate CHANGELOG to",
   "changelog.translateAll": "Translate CHANGELOG to all supported languages",
   "changelog.translateSelected": "Translate CHANGELOG to {0} selected languages",
+  "changelog.translating": "📘 Translating changelog for {0}...",
+  "changelog.translationComplete": "✅ {0} changelog translation complete",
   "protection.title": "🛡️ Phrase Protection Settings",
   "protection.status": "Protection Status",
   "protection.active": "ACTIVE ✅",
@@ -98,9 +104,5 @@
   "github.sourcesChecked": "📋 Sources checked:",
   "github.sourcePackageJson": "• package.json (repository field)",
   "github.sourceGitConfig": "• .git/config",
-  "github.sourceReadme": "• README.md (GitHub URL patterns)",
-  "progress.translatingLanguage": "📘 Translating {0} ({1}/{2}) ...",
-  "progress.lineProgress": "   ↳ Progress: {0}/{1} lines ({2}%)", 
-  "progress.fileCreated": "✅ {0} successfully created",
-  "progress.waiting": "   ⏳ Waiting {0}s..."
+  "github.sourceReadme": "• README.md (GitHub URL patterns)"
 }

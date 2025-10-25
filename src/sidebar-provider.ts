@@ -21,7 +21,7 @@ import {
     Logger,
     ProtectedData
 } from './translation-core';
-import { getL10n, LANGUAGES } from './l10n';
+import { getL10n, initL10n, LANGUAGES } from './l10n'; // ✅ TAMBAHKAN initL10n di sini
 
 export class TranslateSidebarProvider implements vscode.WebviewViewProvider {
     public readonly output: vscode.OutputChannel;
@@ -30,7 +30,7 @@ export class TranslateSidebarProvider implements vscode.WebviewViewProvider {
     private selectedLanguages: Set<string> = new Set(Object.keys(LANGUAGES));
     private protectEnabled: boolean = false;
     private protectedPhrases: string[] = [...DEFAULT_PROTECTED_PHRASES];
-    private l10n: ReturnType<typeof getL10n>;
+        private l10n: ReturnType<typeof getL10n> | undefined;
 
     constructor(
         private readonly _uri: vscode.Uri,
@@ -38,11 +38,21 @@ export class TranslateSidebarProvider implements vscode.WebviewViewProvider {
     ) {
         this.output = vscode.window.createOutputChannel("MultiDoc Translator");
         this.progressOutput = vscode.window.createOutputChannel("Translation Progress");
-        this.l10n = getL10n();
+        
+        // Tunda inisialisasi l10n sampai benar-benar dibutuhkan
+        // this.l10n akan di-set di resolveWebviewView
         this.loadProtectionStatus();
     }
 
     resolveWebviewView(view: vscode.WebviewView) {
+        // Inisialisasi l10n di sini untuk memastikan sudah ready
+        try {
+            this.l10n = getL10n();
+        } catch (error) {
+            console.error('L10n not ready, reinitializing...');
+            this.l10n = initL10n(this._context.extensionPath); // ✅ SEKARANG initL10n tersedia
+        }
+        
         this._view = view;
         view.webview.options = { enableScripts: true };
         this.loadProtectionStatus();
@@ -110,6 +120,18 @@ export class TranslateSidebarProvider implements vscode.WebviewViewProvider {
         });
     }
 
+    // Tambahkan getter untuk safety
+    private getLocalizedString(key: string, ...args: any[]): string {
+        if (!this.l10n) {
+            // Fallback ke English jika l10n belum siap
+            const fallbackTranslations = {
+                // Tambahkan fallback translations di sini
+            };
+            return fallbackTranslations[key] || key;
+        }
+        return this.l10n.t(key, ...args);
+    }
+
     private loadProtectionStatus() {
         const workspace = vscode.workspace.workspaceFolders?.[0]?.uri.fsPath;
         if (workspace) {
@@ -122,24 +144,33 @@ export class TranslateSidebarProvider implements vscode.WebviewViewProvider {
     private getWebviewContent(): string {
         const t = this.l10n.t.bind(this.l10n);
         
-        const languageCheckboxes = Object.entries(LANGUAGES as Record<string, [string, string, string]>)
-            .filter(([code]) => code !== 'en')
-            .map(([code, [name]]) => {
-                const checked = this.selectedLanguages.has(code) ? 'checked' : '';
-                return `
-                <div class="language-item">
-                    <label>
-                        <input type="checkbox" id="lang-${code}" value="${code}" ${checked} 
-                               onchange="toggleLanguage('${code}', this.checked)"
-                               class="language-checkbox">
-                        ${name}
-                    </label>
-                </div>
-                `;
+        // URUTAN BAHASA CUSTOM: pl, zh, jp, de, fr, es, ru, pt, id, kr
+        const customLanguageOrder = ['pl', 'zh', 'jp', 'de', 'fr', 'es', 'ru', 'pt', 'id', 'kr'];
+        
+        const languageCheckboxes = customLanguageOrder
+            .map(code => {
+                if (code in LANGUAGES) {
+                    const [name] = LANGUAGES[code];
+                    // Untuk zh, tampilkan hanya "中文"
+                    const displayName = code === 'zh' ? '中文' : name;
+                    const checked = this.selectedLanguages.has(code) ? 'checked' : '';
+                    return `
+                    <div class="language-item">
+                        <label>
+                            <input type="checkbox" id="lang-${code}" value="${code}" ${checked} 
+                                onchange="toggleLanguage('${code}', this.checked)"
+                                class="language-checkbox">
+                            ${displayName}
+                        </label>
+                    </div>
+                    `;
+                }
+                return '';
             })
             .join('');
-
-        const availableLanguages = Object.keys(LANGUAGES).filter(code => code !== 'en').length;
+        
+        // Hitung available languages berdasarkan urutan custom
+        const availableLanguages = customLanguageOrder.length;
         const allChecked = this.selectedLanguages.size === availableLanguages ? 'checked' : '';
         const someChecked = this.selectedLanguages.size > 0 && this.selectedLanguages.size < availableLanguages;
 
@@ -548,11 +579,11 @@ export class TranslateSidebarProvider implements vscode.WebviewViewProvider {
     }
 
     private toggleAllLanguages(checked: boolean) {
-        // Get all available languages except English
-        const availableLanguages = Object.keys(LANGUAGES).filter(code => code !== 'en');
+        // URUTAN BAHASA CUSTOM: pl, zh, jp, de, fr, es, ru, pt, id, kr
+        const customLanguageOrder = ['pl', 'zh', 'jp', 'de', 'fr', 'es', 'ru', 'pt', 'id', 'kr'];
         
         if (checked) {
-            this.selectedLanguages = new Set(availableLanguages);
+            this.selectedLanguages = new Set(customLanguageOrder);
         } else {
             this.selectedLanguages.clear();
         }
@@ -645,6 +676,7 @@ export class TranslateSidebarProvider implements vscode.WebviewViewProvider {
                                 let countdown = 3;
                                 const interval = setInterval(() => {
                                     if (countdown > 0) {
+                                        // Pemanggilan ini sudah benar menggunakan this.l10n.t
                                         this.progressOutput.appendLine(this.l10n.t('progress.waiting', countdown.toString()));
                                         countdown--;
                                     } else {

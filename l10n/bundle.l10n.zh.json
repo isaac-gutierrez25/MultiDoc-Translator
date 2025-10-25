@@ -7,7 +7,11 @@
   "progress.startingTranslation": "🚀 开始翻译 {0} 种语言...",
   "progress.translating": "🌍 翻译 READMEs",
   "progress.translatingLanguage": "📘 翻译 {0} ({1}/{2}) ...",
+  "progress.translatingTo": "📘 [{2}] 翻译 {0} ({1})",
+  "progress.lineProgress": "   ↳ 进度：{0}/{1} 行 ({2}%)",
   "progress.waiting": "   ⏳ 等待 {0}秒...",
+  "progress.fileCreated": "✅ {0} 成功创建",
+  "progress.changelogTranslated": "✅ {0} 的更新日志已翻译",
   "progress.completed": "🎉 翻译成功完成！",
   "progress.filesSaved": "📁 文件保存在：{0}",
   "progress.removingSelected": "🗑️ 移除 {0} 种选定语言...",
@@ -26,6 +30,8 @@
   "changelog.selectLanguages": "选择要将 CHANGELOG 翻译成的语言",
   "changelog.translateAll": "将 CHANGELOG 翻译成所有支持的语言",
   "changelog.translateSelected": "将 CHANGELOG 翻译成 {0} 种选定语言",
+  "changelog.translating": "📘 翻译 {0} 的更新日志...",
+  "changelog.translationComplete": "✅ {0} 更新日志翻译完成",
   "protection.title": "🛡️ 短语保护设置",
   "protection.status": "保护状态",
   "protection.active": "已激活 ✅",
@@ -98,9 +104,5 @@
   "github.sourcesChecked": "📋 已检查的源：",
   "github.sourcePackageJson": "• package.json (repository 字段)",
   "github.sourceGitConfig": "• .git/config",
-  "github.sourceReadme": "• README.md (GitHub URL 模式)",
-  "progress.translatingLanguage": "📘 {0} 번역 중 ({1}/{2}) ...",
-  "progress.lineProgress": "   ↳ 진행률: {0}/{1} 줄 ({2}%)",
-  "progress.fileCreated": "✅ {0} 성공적으로 생성됨",
-  "progress.waiting": "   ⏳ {0}초 대기 중..."
+  "github.sourceReadme": "• README.md (GitHub URL 模式)"
 }
