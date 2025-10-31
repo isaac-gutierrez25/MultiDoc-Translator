@@ -1,0 +1,183 @@
+header{
+    text-align: center;
+    background-color: #F3F6F6;
+    margin-top: 0;
+    margin-right: 0;
+    padding-left: 0px;
+    height: 30px;
+}
+
+body{
+    background-color: #F3F6F6;
+}
+
+.navegable{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #dddddd;
+    height: 35px;
+}
+
+.trabajos-realizados{
+    color:#2FC1FF;
+    text-align: center;
+    font-size: 30px;
+}
+
+.img-trabajos-realizados{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.boton{
+    background-color: #2FC1FF;
+    margin-left: 50%;
+}
+.principal{
+    background-color: white;
+    display: flex;
+    justify-content:  space-between;
+    align-content: center;
+    padding: 10px 20px;
+}
+
+.cuenta{
+    border-radius:50%;
+}
+
+.principal-izquierda, .principal-centro, .principal-derecha{
+    display: flex;
+    align-items: center;
+
+}
+
+.principal-derecha{
+    padding: 3px 6px;
+}
+
+.Servicios{
+    color: #2FC1FF;
+    text-align: center;
+    font-size: 30px;
+}
+
+.nuestros-servicios{ 
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-radius: 25%;
+}
+
+.servicios-principal{
+    display:flex;
+    justify-content: space-between;
+    text-align: center;
+    gap: 5%;
+}
+
+.slick-slider{
+    margin: 30px;
+    display: flex !important;
+    align-items: center;
+  }
+  
+.carrusel-item{
+    display: flex !important;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+.carrusel-item > h3, .carrusel-item > p {
+    color: white;
+    text-align: center;
+}
+
+.boton-2{
+    background-color: #2FC1FF;
+    margin-left: 50%;
+}
+
+.carrusel-2{
+    display: flex !important;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+.carrusel-2 > h3, .carrusel-2 > p {
+    color: white;
+    text-align: center;
+}
+
+.boton-2{
+    background-color: #2FC1FF;
+    margin-left: 50%;
+}
+
+footer{
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+}
+.logo-footer{
+    display: flex;
+    align-items: start;
+}
+
+.colecciones{
+    color: white;
+    display: flex;
+}
+
+.navegacion{
+    color: white;
+}
+
+.encontrarnos{
+    color: white;
+}
+
+.linea-principal{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.lista-colecciones{
+    color: white;
+}
+
+.lista-navegacion{
+    color: white;
+}
+
+.lista-encontrarnos{
+    color: white;
+}
+.footer-titulos{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.parrafo-logo{
+    color: white;
+}
+
+.listas{
+    display:flex;
+    align-items: end;
+}
+
+.logo-iconos{
+    display: flex;
+    align-items: start;
+    width: 150px;
+}
+
+.envio{
+    display: flex;
+    justify-content: space-around;
+}
